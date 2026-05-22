@@ -27,7 +27,7 @@ window.renderDiscipline = function renderDiscipline(cfg) {
               <ul className="bulleted">{cfg.lead.map((l,i) => <li key={i}>{l}</li>)}</ul>
             </div>
             <div>
-              <div className="eyebrow">AI IN {cfg.title.toUpperCase()}</div>
+              <div className="eyebrow">{cfg.aiEyebrow || `AI IN ${cfg.title.toUpperCase()}`}</div>
               <h2>{cfg.aiHeading}</h2>
               <p>{cfg.aiBody}</p>
               <div className="callout">{cfg.bestFor}</div>
@@ -110,6 +110,7 @@ window.disciplineConfigs = {
     others: [
       { num: "02 — TRANSFORMATION LEADERSHIP", title: "Run your transformation with someone who's done it.", desc: "Programme governance, multi-market rollouts, stakeholder management, vendor and partner orchestration.", shape: "Monthly retainer", href: "transformation-leadership.html" },
       { num: "03 — OPERATIONS LEADERSHIP", title: "The operating system of your business.", desc: "Operating models, tooling stacks, workflow automation, internal dashboards. AI-augmented where it earns its keep.", shape: "Project or fractional", href: "operations-leadership.html" },
+      { num: "04 — FORWARD-DEPLOYED AI ENGINEERING", title: "Engineer-operators who build the AI inside your business.", desc: "Custom AI tools, agentic workflows, decision engines — shipped by one senior engineer who can also operate.", shape: "3–6 months embedded", href: "forward-deployed-engineering.html" },
     ],
   },
   "transformation-leadership": {
@@ -142,6 +143,7 @@ window.disciplineConfigs = {
     others: [
       { num: "01 — STRATEGIC ADVISORY", title: "Strategy that ends in a shipped plan.", desc: "Diagnostics, prioritised initiatives, 90-day plans with named owners. Optional: we run the first 90 days.", shape: "Fixed scope", href: "strategic-advisory.html" },
       { num: "03 — OPERATIONS LEADERSHIP", title: "The operating system of your business.", desc: "Operating models, tooling stacks, workflow automation, internal dashboards. AI-augmented where it earns its keep.", shape: "Project or fractional", href: "operations-leadership.html" },
+      { num: "04 — FORWARD-DEPLOYED AI ENGINEERING", title: "Engineer-operators who build the AI inside your business.", desc: "Custom AI tools, agentic workflows, decision engines — shipped by one senior engineer who can also operate.", shape: "3–6 months embedded", href: "forward-deployed-engineering.html" },
     ],
   },
   "operations-leadership": {
@@ -173,6 +175,41 @@ window.disciplineConfigs = {
     others: [
       { num: "01 — STRATEGIC ADVISORY", title: "Strategy that ends in a shipped plan.", desc: "Diagnostics, prioritised initiatives, 90-day plans with named owners. Optional: we run the first 90 days.", shape: "Fixed scope", href: "strategic-advisory.html" },
       { num: "02 — TRANSFORMATION LEADERSHIP", title: "Run your transformation with someone who's done it.", desc: "Programme governance, multi-market rollouts, stakeholder management, vendor and partner orchestration.", shape: "Monthly retainer", href: "transformation-leadership.html" },
+      { num: "04 — FORWARD-DEPLOYED AI ENGINEERING", title: "Engineer-operators who build the AI inside your business.", desc: "Custom AI tools, agentic workflows, decision engines — shipped by one senior engineer who can also operate.", shape: "3–6 months embedded", href: "forward-deployed-engineering.html" },
+    ],
+  },
+  "forward-deployed-engineering": {
+    title: "Forward-Deployed AI Engineering",
+    heroBefore: "Embedded engineers who build the ",
+    heroGrad: "AI inside your business",
+    heroAfter: ".",
+    pitch1: "Hire one senior engineer-operator into your team. We build the AI software your business actually needs — and operate alongside it, so the thing we ship is the thing your team uses.",
+    pitch2: "Most AI engineers ship code. Ours ship outcomes — because they've operated the business too. Multi-country fintech, regulated ops, deal-desk workflows: they've sat in the seats they're now building for.",
+    leadHeading: "What we build.",
+    lead: [
+      "Internal AI tools, copilots, and decision aids",
+      "Agentic workflows in production — not slideware",
+      "Custom decision engines and domain-specific reasoning",
+      "Integration of foundation models into your existing product",
+      "AI-augmented operations workflows that actually get used",
+      "Evaluation, guardrails, and the runbooks to keep them honest",
+    ],
+    aiEyebrow: "PROOF OF EXECUTION",
+    aiHeading: "Workforce Atlas is this engagement, productised.",
+    aiBody: "Atlas is what a Forward-Deployed AI Engineering engagement looks like, packaged for one specific case — an AI workforce audit plus the deployment service that follows. Where the work generalises into a product, we ship the product. Where it doesn't, we run the engagement directly. Same engineer-operator brain, both ways.",
+    bestFor: "Best for: leadership who've tried generic AI consultancies and want one senior person accountable end-to-end. Teams that need an engineer who can both build the thing and understand the operations it touches.",
+    shapeHeading: "Engagement shape.",
+    shape: [
+      { lbl: "LEAD", val: "One senior engineer-operator — not a team of juniors" },
+      { lbl: "CADENCE", val: "3–5 days/week, embedded" },
+      { lbl: "DURATION", val: "3–6 months minimum" },
+      { lbl: "HAND BACK", val: "Running software, code, docs, training — you own it" },
+    ],
+    cta: "Talk to us about your build",
+    others: [
+      { num: "01 — STRATEGIC ADVISORY", title: "Strategy that ends in a shipped plan.", desc: "Diagnostics, prioritised initiatives, 90-day plans with named owners.", shape: "Fixed scope", href: "strategic-advisory.html" },
+      { num: "02 — TRANSFORMATION LEADERSHIP", title: "Run your transformation with someone who's done it.", desc: "Programme governance, multi-market rollouts, stakeholder management.", shape: "Monthly retainer", href: "transformation-leadership.html" },
+      { num: "03 — OPERATIONS LEADERSHIP", title: "The operating system of your business.", desc: "Operating models, tooling stacks, workflow automation, internal dashboards.", shape: "Project or fractional", href: "operations-leadership.html" },
     ],
   },
 };

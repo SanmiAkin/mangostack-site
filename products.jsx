@@ -8,7 +8,7 @@ const ProdHero = () => (
       <h1 className="display" style={{ fontSize: "clamp(48px, 6.2vw, 88px)" }}>
         Software we ship from<br/>the <span className="grad-text">patterns we see</span>.
       </h1>
-      <p className="lede">Three products in market or in build. Three different bets. Each one is a real piece of software solving an operational problem we kept running into.</p>
+      <p className="lede">Three products in market or in build. Three different bets. Each one is a real piece of software solving an operational problem we kept running into — and each one started life as a <a href="forward-deployed-engineering.html" style={{ color: "var(--orange)" }}>Forward-Deployed AI Engineering</a> engagement that generalised into something we could ship to more than one client.</p>
     </div>
   </section>
 );

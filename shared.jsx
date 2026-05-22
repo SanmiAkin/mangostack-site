@@ -57,6 +57,7 @@ const Nav = ({ active = "home" }) => {
                 <a href="strategic-advisory.html"><strong>Strategic Advisory</strong><span>Strategy that ships</span></a>
                 <a href="transformation-leadership.html"><strong>Transformation Leadership</strong><span>Run your transformation</span></a>
                 <a href="operations-leadership.html"><strong>Operations Leadership</strong><span>Your operating system</span></a>
+                <a href="forward-deployed-engineering.html"><strong>Forward-Deployed AI Engineering</strong><span>Engineer-operators who build the AI</span></a>
               </div>
             )}
           </div>
@@ -123,6 +124,7 @@ const Nav = ({ active = "home" }) => {
             <a href="strategic-advisory.html">Strategic Advisory</a>
             <a href="transformation-leadership.html">Transformation Leadership</a>
             <a href="operations-leadership.html">Operations Leadership</a>
+            <a href="forward-deployed-engineering.html">Forward-Deployed AI Engineering</a>
           </div>
           <div className="ms-mobile-nav__group">
             <a href="products.html" className="ms-mobile-nav__group-head">Products</a>
@@ -159,6 +161,7 @@ const Footer = () => (
           <li><a href="strategic-advisory.html">Strategic Advisory</a></li>
           <li><a href="transformation-leadership.html">Transformation Leadership</a></li>
           <li><a href="operations-leadership.html">Operations Leadership</a></li>
+          <li><a href="forward-deployed-engineering.html">Forward-Deployed AI Engineering</a></li>
         </ul>
       </div>
       <div>

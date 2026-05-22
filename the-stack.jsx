@@ -6,9 +6,9 @@ const StackHero = () =>
       <Breadcrumb items={[{ label: "MangoStack", href: "index.html" }, { label: "The Stack" }]} />
       <div className="eyebrow">THE LEADERSHIP STACK</div>
       <h1 className="display" style={{ fontSize: "clamp(48px, 6.4vw, 88px)" }}>
-        Three disciplines.<br />One <span className="grad-text">stack</span>.
+        Four disciplines.<br />One <span className="grad-text">stack</span>.
       </h1>
-      <p className="lede">Pick a layer, pick a few, or pick all three. Every engagement is led with high expertise — and AI runs through how we work.</p>
+      <p className="lede">Pick a layer, pick a few, or pick all four. Every engagement is led with high expertise — and AI runs through how we work.</p>
     </div>
   </section>;
 
@@ -51,7 +51,7 @@ const DiscArt = ({ num }) => {
       </defs>
       <rect x="60" y="40" width="280" height="48" rx="8" fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="1.5" />
       <rect x="60" y="100" width="220" height="48" rx="8" fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="1.5" />
-      <rect x="60" y="160" width="260" height="48" rx="8" fill={`url(#g1${num})`} opacity="0.18" stroke="url(#g1${num})" strokeWidth="1.5" />
+      <rect x="60" y="160" width="260" height="48" rx="8" fill={`url(#g1${num})`} opacity="0.18" stroke={`url(#g1${num})`} strokeWidth="1.5" />
       <rect x="60" y="220" width="180" height="48" rx="8" fill={`url(#g1${num})`} />
       <text x="80" y="251" fontSize="14" fontWeight="600" fontFamily="Poppins" fill="#0D1117">SHIPPED →</text>
     </svg>,
@@ -88,6 +88,27 @@ const DiscArt = ({ num }) => {
       <rect x="200" y="120" width="56" height="56" rx="8" fill={`url(#g3${num})`} />
       <rect x="270" y="190" width="56" height="56" rx="8" fill={`url(#g3${num})`} opacity="0.7" />
       <path d="M88 78 Q 130 100 158 148 T 228 148 Q 270 170 298 218" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" fill="none" strokeDasharray="3 4" />
+    </svg>,
+  // 04 — FDE: terminal/code window with deployed line
+  <svg viewBox="0 0 400 320" width="100%" style={{ display: "block" }}>
+      <defs>
+        <linearGradient id={`g4${num}`} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#FF8A00" /><stop offset="100%" stopColor="#FFC107" />
+        </linearGradient>
+      </defs>
+      <rect x="40" y="40" width="320" height="240" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)" strokeWidth="1.5" />
+      <circle cx="60" cy="62" r="4" fill="rgba(255,255,255,0.3)" />
+      <circle cx="76" cy="62" r="4" fill="rgba(255,255,255,0.3)" />
+      <circle cx="92" cy="62" r="4" fill="rgba(255,255,255,0.3)" />
+      <line x1="40" y1="84" x2="360" y2="84" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+      <rect x="60" y="104" width="200" height="6" rx="3" fill="rgba(255,255,255,0.22)" />
+      <rect x="60" y="122" width="240" height="6" rx="3" fill="rgba(255,255,255,0.12)" />
+      <rect x="80" y="140" width="170" height="6" rx="3" fill="rgba(255,255,255,0.12)" />
+      <rect x="80" y="158" width="210" height="6" rx="3" fill="rgba(255,255,255,0.12)" />
+      <rect x="60" y="180" width="160" height="6" rx="3" fill={`url(#g4${num})`} />
+      <rect x="60" y="198" width="120" height="6" rx="3" fill="rgba(255,255,255,0.12)" />
+      <rect x="60" y="230" width="148" height="32" rx="8" fill={`url(#g4${num})`} />
+      <text x="82" y="251" fontSize="13" fontWeight="600" fontFamily="Poppins" fill="#0D1117">DEPLOYED →</text>
     </svg>];
 
   return (
@@ -138,6 +159,17 @@ const StackApp = () =>
       p2="This has been our experience over fifteen years: building operating structures, KPI frameworks, and execution dashboards used at Cellulant across 14 markets, ImaliClick across multiple countries, and most recently Finca International across Uganda and Malawi."
       shape="Project-based · or fractional"
       href="operations-leadership.html" />
+    
+      <div style={{ borderTop: "1px solid var(--line)" }}></div>
+      <DiscBlock
+      num="04"
+      reverse
+      eyebrow="FORWARD-DEPLOYED AI ENGINEERING"
+      title="Engineer-operators who build the AI inside your business."
+      p1="Hire one senior engineer-operator into your team. We build the AI software your business actually needs — and operate alongside it, so the thing we ship is the thing your team uses."
+      p2="Most AI engineers ship code. Ours ship outcomes — because they've operated the business too. Workforce Atlas is what this engagement looks like, productised; where the work doesn't yet have a product, we run it directly."
+      shape="3–5 days/wk · 3–6 months"
+      href="forward-deployed-engineering.html" />
     
       <FinalCTA />
     </main>

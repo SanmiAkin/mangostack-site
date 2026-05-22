@@ -9,7 +9,7 @@ const HomeHero = () => (
         We <span className="grad-text">ship</span>.
       </h1>
       <p className="lede">
-        MangoStack is an AI-native operating studio. We embed senior operators into companies to run transformation, operations, and AI work — and we build software products from what we learn doing it.
+        MangoStack is an AI-native operating studio. We embed senior operators into companies to run transformation, operations, and AI work — we build custom AI inside those businesses — and we ship software products from what we learn doing it.
       </p>
       <div className="ms-hero__ctas">
         <a href="contact.html" className="btn-primary">Book a discovery call</a>
@@ -30,19 +30,25 @@ const TwoTrack = () => {
     <section className="ms-section" ref={ref} id="what-we-do">
       <div className="ms-container">
         <div className="eyebrow">WHAT WE DO</div>
-        <h2 className="h1">We do two things, and they<br/>reinforce each other.</h2>
-        <p className="lede">Consulting work tells us where the patterns are. Software products are how we scale them. Same operator brain across both.</p>
+        <h2 className="h1">We operate. We build.<br/>We <span className="grad-text">ship</span>.</h2>
+        <p className="lede">Same operator brain across all three. What we learn embedded shows up in what we build; what we build sometimes generalises into what we ship.</p>
         <div className="two-track">
           <div className={`track ${on ? "is-in" : ""}`}>
-            <div className="eyebrow track__eyebrow">THE STACK</div>
-            <h3 className="track__title">Senior operators, embedded into your team</h3>
-            <p className="track__body">We embed a senior operator into your business — fractionally, full-time, or as a project lead — across transformation, operations, and strategy. Fifteen years of senior operating experience across regulated industries. AI runs through how we work.</p>
+            <div className="eyebrow track__eyebrow">OPERATE — THE STACK</div>
+            <h3 className="track__title">Senior operators, embedded in your team</h3>
+            <p className="track__body">Strategic Advisory, Transformation, and Operations Leadership. Embedded senior operators who run the work alongside you — fractionally, full-time, or as a project lead.</p>
             <a href="the-stack.html" className="btn-link">Explore the Stack →</a>
           </div>
+          <div className={`track ${on ? "is-in" : ""}`}>
+            <div className="eyebrow track__eyebrow">BUILD — FORWARD-DEPLOYED AI</div>
+            <h3 className="track__title">Engineer-operators, building the AI inside it</h3>
+            <p className="track__body">One senior engineer-operator embedded to build the custom AI tools your business actually needs — and operate alongside them, so the thing we ship is the thing your team uses.</p>
+            <a href="forward-deployed-engineering.html" className="btn-link">See how we build →</a>
+          </div>
           <div className={`track track--ship ${on ? "is-in" : ""}`}>
-            <div className="eyebrow track__eyebrow">PRODUCTS</div>
+            <div className="eyebrow track__eyebrow">SHIP — PRODUCTS</div>
             <h3 className="track__title">Software we ship from what we learn</h3>
-            <p className="track__body">Three products in market or in build. Atlas is our AI workforce audit. ILR-Calc is a free, zero-data UK immigration readiness tool. HowCraft turns tribal knowledge into instant decisions.</p>
+            <p className="track__body">Three products in market or in build. ILR-Calc, our free UK immigration readiness tool. Workforce Atlas, our AI workforce audit. HowCraft, our decision engine for revenue teams.</p>
             <a href="products.html" className="btn-link">See the products →</a>
           </div>
         </div>
@@ -70,12 +76,13 @@ const StackSection = () => (
   <section className="ms-section" style={{ paddingTop: 64 }}>
     <div className="ms-container">
       <div className="eyebrow">THE STACK</div>
-      <h2 className="h1">Three disciplines.<br/>One operating stack.</h2>
-      <p className="lede">Pick a layer, pick a few, or pick all three. Every engagement is led by a senior operator — supported by our vetted network across the UK and Africa. AI runs through how we work.</p>
+      <h2 className="h1">Four disciplines.<br/>One operating stack.</h2>
+      <p className="lede">Pick a layer, pick a few, or pick all four. Every engagement is led by a senior operator — supported by our vetted network across the UK and Africa. AI runs through how we work.</p>
       <div className="stack-grid">
         <DiscCard i={0} num="01 — STRATEGIC ADVISORY" title="Strategy that ends in a shipped plan, not a 60-page deck." desc="Diagnostics, prioritised initiatives, 90-day execution plans with named owners. Optional: we run the first 90 days for you." shape="4–8 weeks · fixed scope" href="strategic-advisory.html" />
         <DiscCard i={1} num="02 — TRANSFORMATION LEADERSHIP" title="Embedded senior leaders for org, process, or tech transformation programmes." desc="Programme governance, multi-market rollouts, stakeholder management, vendor and partner orchestration. Run by someone who's done it at scale." shape="2–5 days/wk · monthly retainer" href="transformation-leadership.html" />
         <DiscCard i={2} num="03 — OPERATIONS LEADERSHIP" title="The operating system of your business — designed, automated, AI-augmented." desc="Operating models, ops tooling stacks, workflow automation, internal dashboards. AI-augmented operations where it earns its keep." shape="Project-based · or fractional" href="operations-leadership.html" />
+        <DiscCard i={3} num="04 — FORWARD-DEPLOYED AI ENGINEERING" title="Engineer-operators who build the AI inside your business." desc="One senior engineer who can build the thing — and operate it. Custom AI tools, agentic workflows, decision engines. Workforce Atlas is this engagement, productised." shape="3–5 days/wk · 3–6 months" href="forward-deployed-engineering.html" />
       </div>
     </div>
   </section>
@@ -161,12 +168,17 @@ const AIBand = () => (
           <p>Pragmatic identification of where AI actually creates leverage in your business — and the courage to say where it doesn't.</p>
         </div>
         <div className="pillar">
-          <div className="pillar__num">02 — INTEGRATION</div>
+          <div className="pillar__num">02 — BUILD</div>
+          <h3>Forward-Deployed AI Engineering ships the actual software</h3>
+          <p>Strategy gets you a roadmap. Forward-Deployed AI Engineers ship the AI inside your business — one senior engineer-operator, embedded, accountable end-to-end. <a href="forward-deployed-engineering.html" style={{ color: "var(--white)", textDecoration: "underline" }}>How we build →</a></p>
+        </div>
+        <div className="pillar">
+          <div className="pillar__num">03 — INTEGRATION</div>
           <h3>Getting AI into product and operations, in production</h3>
           <p>Pilot to production. Agents and models wrapped in a working operating model — built and shipped, not slidewared.</p>
         </div>
         <div className="pillar">
-          <div className="pillar__num">03 — ADOPTION</div>
+          <div className="pillar__num">04 — ADOPTION</div>
           <h3>Governance, team uplift, and AI literacy that sticks</h3>
           <p>Compliance designed in. Literacy programmes that change how the team actually works. Stickiness over launch hype.</p>
         </div>

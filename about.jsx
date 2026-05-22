@@ -19,7 +19,7 @@ const AboutApp = () => (
             </div>
             <div className="studio-card__row">
               <dt>Disciplines</dt>
-              <dd>Strategic Advisory · Transformation · Operations</dd>
+              <dd>Strategic Advisory · Transformation · Operations · Forward-Deployed AI Engineering</dd>
             </div>
             <div className="studio-card__row">
               <dt>Products</dt>

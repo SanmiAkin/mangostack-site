@@ -32,6 +32,16 @@ const AITransformApp = () => (
 
       <section className="prose-section">
         <div className="ms-container">
+          <div className="eyebrow">STRATEGY → BUILD</div>
+          <h2>Strategy is the roadmap. Forward-Deployed AI Engineering ships it.</h2>
+          <p>AI Transformation is the overall programme: strategy, integration, governance, adoption. The build arm — the part that actually puts working AI inside your business — is <a href="forward-deployed-engineering.html" style={{ color: "var(--orange)" }}>Forward-Deployed AI Engineering</a>. One senior engineer-operator embedded into your team, building the AI tools and agentic workflows your business needs, accountable end-to-end.</p>
+          <p>Some clients start with strategy and bring an FDE in to execute. Others start with the FDE because they already know what they want shipped. Either way, the same engineer-operator brain runs both halves.</p>
+          <a href="forward-deployed-engineering.html" className="btn-primary" style={{ marginTop: 16 }}>How we build →</a>
+        </div>
+      </section>
+
+      <section className="prose-section prose-section--alt">
+        <div className="ms-container">
           <div className="eyebrow">OUR METHODOLOGY</div>
           <h2>Workforce Atlas.</h2>
           <p>Where the industry fits, we run AI Transformation engagements through Workforce Atlas — our productised audit methodology. The audit maps your team's time, identifies the highest-ROI automation opportunities, designs the small set of AI employees that should be deployed alongside the human team, and gives you a 90-day implementation roadmap.</p>
@@ -40,7 +50,7 @@ const AITransformApp = () => (
         </div>
       </section>
 
-      <section className="prose-section prose-section--alt">
+      <section className="prose-section">
         <div className="ms-container two-col">
           <div>
             <div className="eyebrow">WHAT WE LEAD</div>
@@ -75,7 +85,7 @@ const AITransformApp = () => (
         </div>
       </section>
 
-      <section className="prose-section">
+      <section className="prose-section prose-section--alt">
         <div className="ms-container">
           <div className="eyebrow">ENGAGEMENT SHAPE</div>
           <h2>Two entry points.</h2>
@@ -86,9 +96,9 @@ const AITransformApp = () => (
               <p style={{ color: "var(--grey-2)", margin: 0 }}>Fixed scope · diagnostic + roadmap</p>
             </div>
             <div style={{ padding: 28, background: "linear-gradient(135deg, rgba(255,138,0,0.10), rgba(255,193,7,0.02))", border: "1px solid rgba(255,138,0,0.3)", borderRadius: 14 }}>
-              <div className="eyebrow" style={{ marginBottom: 12, color: "var(--orange)" }}>FULL AI EMBEDMENT</div>
-              <h3 style={{ fontSize: 28, margin: "0 0 8px", letterSpacing: "-0.015em" }}>12 weeks – 6 months</h3>
-              <p style={{ color: "var(--grey-2)", margin: 0 }}>Embedded delivery · diagnostic, pilot, scale, hand back</p>
+              <div className="eyebrow" style={{ marginBottom: 12, color: "var(--orange)" }}>FORWARD-DEPLOYED AI ENGINEERING</div>
+              <h3 style={{ fontSize: 28, margin: "0 0 8px", letterSpacing: "-0.015em" }}>3–6 months</h3>
+              <p style={{ color: "var(--grey-2)", margin: 0 }}>Embedded engineer-operator · diagnostic, build, ship, hand back. <a href="forward-deployed-engineering.html" style={{ color: "var(--white)" }}>Learn more →</a></p>
             </div>
           </div>
           <p style={{ marginTop: 24, color: "var(--grey-2)" }}>Best for: leadership teams under board pressure to "do something with AI," product orgs wanting to ship AI-native features that actually work, and operations leaders ready to embed AI into how the business runs.</p>
