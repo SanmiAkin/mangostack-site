@@ -417,7 +417,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ============ HERO ============ */
 .ms-hero {
   position: relative;
-  padding: 72px 0 96px;
+  padding: 64px 0 56px;
   overflow: hidden;
   isolation: isolate;
 }
@@ -443,15 +443,15 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .ms-hero__ctas {
   display: flex; gap: 28px; align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 44px;
   flex-wrap: wrap;
 }
 .ms-hero__stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 28px;
   border-top: 1px solid var(--line);
-  padding-top: 40px;
+  padding-top: 28px;
 }
 .stat__line {
   font-size: 19px;
