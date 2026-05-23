@@ -42,6 +42,7 @@ const Nav = ({ active = "home" }) => {
   }, [mobileOpen]);
 
   return (
+    <>
     <div className="ms-nav-wrap">
       <header className="ms-nav">
         <a href="index.html" className="ms-nav__brand"><Wordmark height={34} /></a>
@@ -100,8 +101,9 @@ const Nav = ({ active = "home" }) => {
           <span></span><span></span><span></span>
         </button>
       </header>
+    </div>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — sibling of .ms-nav-wrap (NOT child) so backdrop-filter on the wrap doesn't trap it in a 77px containing block */}
       <div
         className={`ms-mobile-scrim ${mobileOpen ? "is-open" : ""}`}
         onClick={() => setMobileOpen(false)}
@@ -143,7 +145,7 @@ const Nav = ({ active = "home" }) => {
           <a href="mailto:info@mangostack.co.uk" className="ms-mobile-nav__email">info@mangostack.co.uk</a>
         </div>
       </aside>
-    </div>
+    </>
   );
 };
 
