@@ -1,253 +1,277 @@
-// MangoStack — Homepage (v3 studio model)
+// MangoStack — Home (v4 — Forward Engineering)
 const HomeHero = () => (
-  <section className="ms-hero">
+  <section className="ms-hero ms-hero--fwd">
     <div className="ms-hero__wash"></div>
-    <div className="ms-container ms-hero__inner">
-      <div className="eyebrow">AI-NATIVE OPERATING STUDIO</div>
-      <h1 className="display">
-        We embed.<br/>
-        We <span className="grad-text">ship</span>.
-      </h1>
-      <p className="lede">
-        MangoStack is an AI-native operating studio. We embed senior operators into companies to run transformation, operations, and AI work — we build custom AI inside those businesses — and we ship software products from what we learn doing it.
-      </p>
-      <div className="ms-hero__ctas">
-        <a href="contact.html" className="btn-primary">Book a discovery call</a>
-        <a href="#products" className="btn-link">See what we ship →</a>
+    <div className="ms-container ms-hero__inner ms-hero__inner--split">
+      <div className="ms-hero__text">
+        <div className="eyebrow">FORWARD ENGINEERING</div>
+        <h1 className="display">
+          We deploy senior operators<br/>
+          into your hardest problems —<br/>
+          and <span className="grad-text">engineer</span> what we learn<br/>
+          into software.
+        </h1>
+        <p className="lede">
+          MangoStack is an operating studio. We run transformation, operations, and AI work from inside your business, and we build the software those problems demand. <strong style={{ color: "var(--white)", fontWeight: 500 }}>Senior operators, embedded. Software, shipped.</strong>
+        </p>
+        <div className="ms-hero__ctas">
+          <a href="contact.html" className="btn-primary">Start a conversation</a>
+          <a href="pelvar.html" className="btn-link">See Pelvar →</a>
+        </div>
       </div>
-      <div className="ms-hero__stats">
-        <div className="stat__line">15 years operating financial services at scale.</div>
-        <div className="stat__line">Multi-country fintech, banking, microfinance — built and delivered.</div>
-        <div className="stat__line">3 products in market or in build.</div>
+      <div className="ms-hero__viz">
+        <ForwardEngine variant="hero" />
       </div>
     </div>
   </section>
 );
 
-const TwoTrack = () => {
+const TwoMotions = () => {
   const [ref, on] = useReveal();
   return (
-    <section className="ms-section" ref={ref} id="what-we-do">
+    <section className="ms-section ms-motions" ref={ref}>
       <div className="ms-container">
-        <div className="eyebrow">WHAT WE DO</div>
-        <h2 className="h1">We operate. We build.<br/>We <span className="grad-text">ship</span>.</h2>
-        <p className="lede">Same operator brain across all three. What we learn embedded shows up in what we build; what we build sometimes generalises into what we ship.</p>
-        <div className="two-track">
-          <div className={`track ${on ? "is-in" : ""}`}>
-            <div className="eyebrow track__eyebrow">OPERATE — THE STACK</div>
-            <h3 className="track__title">Senior operators, embedded in your team</h3>
-            <p className="track__body">Strategic Advisory, Transformation, and Operations Leadership. Embedded senior operators who run the work alongside you — fractionally, full-time, or as a project lead.</p>
-            <a href="the-stack.html" className="btn-link">Explore the Stack →</a>
+        <div className="eyebrow">THE TWO MOTIONS</div>
+        <h2 className="h1">We <span className="grad-text">operate</span>.<br/>We <span className="grad-text">build</span>.</h2>
+        <p className="lede">The two feed each other. The front line shows us what to build; the software makes the front line faster.</p>
+        <div className="motions-grid">
+          <a href="operating.html" className={`motion-card ${on ? "is-in" : ""}`}>
+            <div className="motion-card__tag">
+              <span className="motion-card__chev">←</span>
+              <span>DEPLOY FORWARD</span>
+            </div>
+            <h3 className="motion-card__title">We operate.</h3>
+            <p className="motion-card__body">Senior operators embedded on your front line to lead transformation, operations, and AI to a result, then hand back.</p>
+            <span className="motion-card__cta">Operating <span className="arrow-icon">→</span></span>
+          </a>
+          <div className="motions-joiner" aria-hidden="true">
+            <div className="motions-joiner__line"></div>
+            <div className="motions-joiner__dot"></div>
+            <div className="motions-joiner__line"></div>
           </div>
-          <div className={`track ${on ? "is-in" : ""}`}>
-            <div className="eyebrow track__eyebrow">BUILD — FORWARD-DEPLOYED AI</div>
-            <h3 className="track__title">Engineer-operators, building the AI inside it</h3>
-            <p className="track__body">One senior engineer-operator embedded to build the custom AI tools your business actually needs — and operate alongside them, so the thing we ship is the thing your team uses.</p>
-            <a href="forward-deployed-engineering.html" className="btn-link">See how we build →</a>
-          </div>
-          <div className={`track track--ship ${on ? "is-in" : ""}`}>
-            <div className="eyebrow track__eyebrow">SHIP — PRODUCTS</div>
-            <h3 className="track__title">Software we ship from what we learn</h3>
-            <p className="track__body">Three products in market or in build. ILR-Calc, our free UK immigration readiness tool. Workforce Atlas, our AI workforce audit. HowCraft, our decision engine for revenue teams.</p>
-            <a href="products.html" className="btn-link">See the products →</a>
-          </div>
+          <a href="software.html" className={`motion-card motion-card--build ${on ? "is-in" : ""}`}>
+            <div className="motion-card__tag motion-card__tag--right">
+              <span>ENGINEER FORWARD</span>
+              <span className="motion-card__chev">→</span>
+            </div>
+            <h3 className="motion-card__title">We build.</h3>
+            <p className="motion-card__body">We turn the problems we see on the front line into production software. Our flagship is agentic finance.</p>
+            <span className="motion-card__cta">Software <span className="arrow-icon">→</span></span>
+          </a>
         </div>
       </div>
     </section>
   );
 };
 
-const DiscCard = ({ i, num, title, desc, shape, href }) => {
-  const [ref, on] = useReveal();
-  return (
-    <a href={href} ref={ref} className={`disc-card ${on ? "is-in" : ""}`} style={{ "--i": i }}>
-      <div className="disc-card__num">{num}</div>
-      <h3 className="disc-card__title">{title}</h3>
-      <p className="disc-card__desc">{desc}</p>
-      <div className="disc-card__foot">
-        <span className="pill-mini">{shape}</span>
-        <span className="arrow">Learn more →</span>
+// ---------- FLAGSHIP — Pelvar full-bleed band ----------
+const FlagshipBand = () => (
+  <section className="ms-section ms-flagship">
+    <div className="ms-flagship__bg" aria-hidden="true"></div>
+    <div className="ms-container ms-flagship__inner">
+      <div className="ms-flagship__head">
+        <div className="eyebrow eyebrow--on-flagship">THE FLAGSHIP · AGENTIC FINANCE</div>
+        <div className="ms-flagship__pills">
+          <Pill kind="soon">IN BUILD</Pill>
+          <Pill kind="neutral-dark">DESIGN PARTNERS</Pill>
+        </div>
       </div>
-    </a>
-  );
-};
-
-const StackSection = () => (
-  <section className="ms-section" style={{ paddingTop: 64 }}>
-    <div className="ms-container">
-      <div className="eyebrow">THE STACK</div>
-      <h2 className="h1">Four disciplines.<br/>One operating stack.</h2>
-      <p className="lede">Pick a layer, pick a few, or pick all four. Every engagement is led by a senior operator — supported by our vetted network across the UK and Africa. AI runs through how we work.</p>
-      <div className="stack-grid">
-        <DiscCard i={0} num="01 — STRATEGIC ADVISORY" title="Strategy that ends in a shipped plan, not a 60-page deck." desc="Diagnostics, prioritised initiatives, 90-day execution plans with named owners. Optional: we run the first 90 days for you." shape="4–8 weeks · fixed scope" href="strategic-advisory.html" />
-        <DiscCard i={1} num="02 — TRANSFORMATION LEADERSHIP" title="Embedded senior leaders for org, process, or tech transformation programmes." desc="Programme governance, multi-market rollouts, stakeholder management, vendor and partner orchestration. Run by someone who's done it at scale." shape="2–5 days/wk · monthly retainer" href="transformation-leadership.html" />
-        <DiscCard i={2} num="03 — OPERATIONS LEADERSHIP" title="The operating system of your business — designed, automated, AI-augmented." desc="Operating models, ops tooling stacks, workflow automation, internal dashboards. AI-augmented operations where it earns its keep." shape="Project-based · or fractional" href="operations-leadership.html" />
-        <DiscCard i={3} num="04 — FORWARD-DEPLOYED AI ENGINEERING" title="Engineer-operators who build the AI inside your business." desc="One senior engineer who can build the thing — and operate it. Custom AI tools, agentic workflows, decision engines. Workforce Atlas is this engagement, productised." shape="3–5 days/wk · 3–6 months" href="forward-deployed-engineering.html" />
+      <div className="ms-flagship__grid">
+        <div className="ms-flagship__text">
+          <h2 className="h1">Pelvar — the agentic month-end close for UK groups.</h2>
+          <p className="lede">Groups with multiple companies and currencies spend days every month combining their books by hand. Pelvar runs that close with an AI agent — reconciles the balances between entities, gets the currency right, and writes the result back into the accounts.</p>
+          <p className="ms-flagship__line">Audit-ready group accounts in a fraction of the time.</p>
+          <div className="ms-flagship__ctas">
+            <a href="pelvar.html" className="btn-primary">Explore Pelvar →</a>
+            <a href="software.html" className="btn-link">All software →</a>
+          </div>
+          <div className="ms-flagship__sibling">
+            Part of MangoStack's agentic finance line, alongside <a href="pipworth.html">Pipworth</a>.
+          </div>
+        </div>
+        <div className="ms-flagship__diagram">
+          <PelvarFlow />
+        </div>
       </div>
     </div>
   </section>
 );
 
-// ---------- PRODUCTS (cream backdrop) ----------
-const ProdCard = ({ status, status2, eyebrow, title, tagline, body, cta, href, target, meta }) => (
-  <a href={href} target={target} rel={target === "_blank" ? "noopener" : undefined} className="prod-card">
-    <div className="prod-card__pills">
-      <Pill kind={status.kind}>{status.label}</Pill>
-      {status2 && <Pill kind="neutral">{status2}</Pill>}
+// Pelvar close-flow schematic — used on home + Pelvar page
+const PelvarFlow = ({ compact = false }) => (
+  <div className={`pflow ${compact ? "pflow--compact" : ""}`}>
+    <div className="pflow__entities">
+      <div className="pflow__ent" style={{ "--i": 0 }}>
+        <div className="pflow__ent-tag">ENTITY 01</div>
+        <div className="pflow__ent-amt">£ <span>GBP</span></div>
+      </div>
+      <div className="pflow__ent" style={{ "--i": 1 }}>
+        <div className="pflow__ent-tag">ENTITY 02</div>
+        <div className="pflow__ent-amt">€ <span>EUR</span></div>
+      </div>
+      <div className="pflow__ent" style={{ "--i": 2 }}>
+        <div className="pflow__ent-tag">ENTITY 03</div>
+        <div className="pflow__ent-amt">$ <span>USD</span></div>
+      </div>
+      <div className="pflow__ent" style={{ "--i": 3 }}>
+        <div className="pflow__ent-tag">ENTITY 04</div>
+        <div className="pflow__ent-amt">₦ <span>NGN</span></div>
+      </div>
     </div>
-    <div className="prod-card__eyebrow">{eyebrow}</div>
-    <h3 className="prod-card__title">{title}</h3>
-    <div className="prod-card__divider"></div>
-    <p className="prod-card__tagline">{tagline}</p>
-    <p className="prod-card__body">{body}</p>
-    <div className="prod-card__cta">
-      <span className="prod-card__cta-link">{cta} <span className="arrow-icon">→</span></span>
-      {meta && <span className="prod-card__cta-meta">{meta}</span>}
+    <div className="pflow__beams" aria-hidden="true">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M 5 12 Q 50 50 50 95" stroke="url(#pflow-g)" strokeWidth="0.6" fill="none"/>
+        <path d="M 35 12 Q 50 50 50 95" stroke="url(#pflow-g)" strokeWidth="0.6" fill="none"/>
+        <path d="M 65 12 Q 50 50 50 95" stroke="url(#pflow-g)" strokeWidth="0.6" fill="none"/>
+        <path d="M 95 12 Q 50 50 50 95" stroke="url(#pflow-g)" strokeWidth="0.6" fill="none"/>
+        <defs>
+          <linearGradient id="pflow-g" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#FF8A00" stopOpacity="0.0"/>
+            <stop offset="60%" stopColor="#FFC107" stopOpacity="0.7"/>
+            <stop offset="100%" stopColor="#FF8A00" stopOpacity="1"/>
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
-  </a>
+    <div className="pflow__agent">
+      <div className="pflow__agent-ring"></div>
+      <div className="pflow__agent-core">
+        <div className="pflow__agent-lbl">PELVAR AGENT</div>
+        <div className="pflow__agent-task">Reconciling · Translating · Writing back</div>
+      </div>
+    </div>
+    <div className="pflow__out">
+      <div className="pflow__out-pill"><span className="pflow__out-dot"></span> GROUP ACCOUNTS · AUDIT-READY</div>
+    </div>
+  </div>
 );
 
-const ProductsSection = () => (
-  <section className="ms-section ms-products" id="products">
+// ---------- PROOF STRIP ----------
+const ProofStrip = () => (
+  <section className="ms-section ms-proof">
     <div className="ms-container">
-      <div className="eyebrow eyebrow--cream">PRODUCTS</div>
-      <h2 className="h1 h1--dark">What we ship.</h2>
-      <p className="lede lede--dark">Three products, three different bets. Each is a real piece of software we've built or are building — solving an operational problem we kept seeing.</p>
-      <div className="product-grid">
-        <ProdCard
-          status={{ kind: "live", label: "LIVE" }}
-          status2="ZERO DATA COLLECTED"
-          eyebrow="UK IMMIGRATION READINESS"
-          title="ILR-Calc"
-          tagline="Check your UK ILR readiness in minutes."
-          body="A free readiness calculator for people preparing to apply for UK Indefinite Leave to Remain. No sign-up, no email, no tracking — your answers stay in your browser."
-          cta="Open ILR-Calc"
-          href="https://www.ilr-calc.co.uk"
-          target="_blank"
-          meta="ilr-calc.co.uk · new tab"
-        />
-        <ProdCard
-          status={{ kind: "soon", label: "COMING SOON" }}
-          status2="PRODUCT + SERVICE"
-          eyebrow="AI WORKFORCE AUDIT"
-          title="Workforce Atlas"
-          tagline="Find the work AI should be doing in your firm."
-          body="An AI workforce audit for high-performing firms — productised methodology plus the service to deploy it. UK Accounting first; more industries throughout 2026."
-          cta="Learn more"
-          href="workforce-atlas.html"
-        />
-        <ProdCard
-          status={{ kind: "soon", label: "COMING SOON" }}
-          eyebrow="DECISION ENGINE"
-          title="HowCraft"
-          tagline="Instant decisions for revenue teams."
-          body="HowCraft turns tribal knowledge into instant, consistent decisions inside Slack and Teams. Launching first for deal desks and revenue operations."
-          cta="Join the waitlist"
-          href="howcraft.html"
-        />
+      <div className="eyebrow">WHAT'S SHIPPING</div>
+      <h2 className="h2">The studio, on the ground.</h2>
+      <div className="proof-row">
+        <a href="pelvar.html" className="proof-item">
+          <div className="proof-item__head">
+            <Pill kind="soon">IN BUILD</Pill>
+            <span className="proof-item__name">Pelvar</span>
+          </div>
+          <p className="proof-item__body">Agentic group close and consolidation. In development with design partners.</p>
+          <span className="proof-item__cta">Read more →</span>
+        </a>
+        <a href="pipworth.html" className="proof-item">
+          <div className="proof-item__head">
+            <Pill kind="soon">IN DEVELOPMENT</Pill>
+            <span className="proof-item__name">Pipworth</span>
+          </div>
+          <p className="proof-item__body">Agentic cash application and AR automation. Sibling product in the finance line.</p>
+          <span className="proof-item__cta">Read more →</span>
+        </a>
+        <a href="https://www.ilr-calc.co.uk" target="_blank" rel="noopener" className="proof-item">
+          <div className="proof-item__head">
+            <Pill kind="live">LIVE</Pill>
+            <span className="proof-item__name">ILR-Calc</span>
+          </div>
+          <p className="proof-item__body">A free UK settlement-eligibility tool, used by people navigating UK immigration.</p>
+          <span className="proof-item__cta">Open tool →</span>
+        </a>
       </div>
-      <div className="products-closer">
-        MangoStack ships software the same way we run engagements: senior-led, no junior padding, built to be useful. If you're working on a similar problem, we'd like to hear from you.
-      </div>
+      <p className="proof-foot">
+        Workforce Atlas — the productised method behind our AI work — sits under Operating and <a href="workforce-atlas.html">on its own page</a>.
+      </p>
     </div>
   </section>
 );
 
-// ---------- AI BAND ----------
-const AIBand = () => (
-  <section className="ms-section ms-ai">
-    <div className="ms-ai__wash"></div>
-    <div className="ms-container ms-ai__inner">
-      <div className="eyebrow eyebrow--on-grad">AI TRANSFORMATION</div>
-      <h2 className="h1">Turn AI from a hype topic<br/>into a working part of your business.</h2>
-      <p className="lede">Most AI strategies are written by people who've never run an operation. Ours isn't. We've deployed financial services across 14 markets, processed millions of transactions, and built operating systems for businesses that couldn't afford to break. We bring that operating discipline to AI.</p>
-      <div className="pillars">
-        <div className="pillar">
-          <div className="pillar__num">01 — STRATEGY</div>
-          <h3>Where AI moves the needle, and where it doesn't</h3>
-          <p>Pragmatic identification of where AI actually creates leverage in your business — and the courage to say where it doesn't.</p>
-        </div>
-        <div className="pillar">
-          <div className="pillar__num">02 — BUILD</div>
-          <h3>Forward-Deployed AI Engineering ships the actual software</h3>
-          <p>Strategy gets you a roadmap. Forward-Deployed AI Engineers ship the AI inside your business — one senior engineer-operator, embedded, accountable end-to-end. <a href="forward-deployed-engineering.html" style={{ color: "var(--white)", textDecoration: "underline" }}>How we build →</a></p>
-        </div>
-        <div className="pillar">
-          <div className="pillar__num">03 — INTEGRATION</div>
-          <h3>Getting AI into product and operations, in production</h3>
-          <p>Pilot to production. Agents and models wrapped in a working operating model — built and shipped, not slidewared.</p>
-        </div>
-        <div className="pillar">
-          <div className="pillar__num">04 — ADOPTION</div>
-          <h3>Governance, team uplift, and AI literacy that sticks</h3>
-          <p>Compliance designed in. Literacy programmes that change how the team actually works. Stickiness over launch hype.</p>
-        </div>
-      </div>
-      <a href="ai-transformation.html" className="btn-primary">Explore AI Transformation →</a>
-    </div>
-  </section>
-);
-
-// ---------- HOW WE WORK preview ----------
-const HowSection = () => (
-  <section className="ms-section ms-light">
+// ---------- THE ENGINE (services) ----------
+const EngineSection = () => (
+  <section className="ms-section ms-engine">
     <div className="ms-container">
-      <div className="eyebrow eyebrow--cream">HOW WE WORK</div>
-      <h2 className="h1 h1--dark">Fast, focused,<br/>outcome-shaped.</h2>
-      <p className="lede lede--dark">We don't do open-ended retainers or 200-page strategies. Every engagement runs the same way — fast, focused, and outcome-shaped.</p>
-      <div className="phase-row">
+      <div className="eyebrow">OPERATING · THE ENGINE</div>
+      <h2 className="h1">Senior operators,<br/>on your front line.</h2>
+      <p className="lede">When a transformation has stalled, an operation will not scale, or AI is stuck in planning, we put a senior operator inside the team to lead it to a result and hand back.</p>
+      <div className="engine-grid">
         {[
-          ["01","WEEK 1","Discover","Listen, read, ask the hard questions."],
-          ["02","WEEKS 2–3","Design","Map the path. You sign off before we build."],
-          ["03","WEEKS 4+","Deliver","Weekly demos, weekly notes, no surprises."],
-          ["04","WEEK n","Hand back","Document, train your team, exit cleanly."],
-        ].map(([num, when, title, body], i) => (
-          <div className="phase" key={i}>
-            <div className="phase__head">
-              <span className="phase__num">{num}</span>
-              <span className="phase__when">{when}</span>
-            </div>
-            <h3 className="phase__title">{title}</h3>
-            <p className="phase__body">{body}</p>
-            {i < 3 && <div className="phase__connector"></div>}
+          ["Transformation programmes", "Take a function from where it is to a defined future state, with accountability for the outcome."],
+          ["Operations leadership", "Run or rebuild an operation so it scales: model, tooling, process, team."],
+          ["AI embedment", "Move AI from intention to production: strategy, integration with compliance designed in, and adoption that lasts."],
+        ].map(([t, d]) => (
+          <div className="engine-item" key={t}>
+            <div className="engine-item__bar"></div>
+            <h3 className="engine-item__title">{t}</h3>
+            <p className="engine-item__body">{d}</p>
           </div>
         ))}
       </div>
-      <a href="how-we-work.html" className="btn-secondary btn-secondary--dark">See our full approach →</a>
+      <a href="operating.html" className="btn-secondary">How we operate →</a>
     </div>
   </section>
 );
 
-// ---------- INDUSTRIES ----------
-const IndustriesSection = () => (
-  <section className="ms-section">
-    <div className="ms-container">
-      <div className="eyebrow">INDUSTRIES</div>
-      <h2 className="h1">Where we go deep.</h2>
-      <p className="lede">Fifteen years operating inside regulated industries where the cost of getting it wrong is high — and the reward for getting it right is durable.</p>
-      <div className="ind-pills">
-        {["Fintech & Embedded Finance","Banking & Financial Services","InsureTech","RegTech","Telecommunications","Microfinance & Inclusive Finance"].map(p => (
-          <span className="ind-pill" key={p}>{p}</span>
-        ))}
+// ---------- WHY IT COMPOUNDS (the flywheel) ----------
+const FlywheelSection = () => (
+  <section className="ms-section ms-flywheel">
+    <div className="ms-container ms-flywheel__inner">
+      <div className="eyebrow">WHY IT COMPOUNDS</div>
+      <h2 className="h1">The flywheel.</h2>
+      <div className="flywheel-grid">
+        <div className="flywheel-text">
+          <p>Deploy forward. See the real problem. Engineer it forward into software. Deploy the software back into the front line. Each turn compounds.</p>
+          <p>Pelvar is Forward Engineering made visible — a group-finance problem we saw up close, engineered forward into a product. Services fund and inform the build; the software turns what we learn into something that scales.</p>
+          <a href="approach.html" className="btn-link">The studio model →</a>
+        </div>
+        <div className="flywheel-viz">
+          <FlywheelSvg/>
+        </div>
       </div>
-      <p className="ind-thread"><span className="ind-thread__lbl">Common thread:</span> regulated, complex, high-stakes. We thrive where execution discipline matters more than ideas.</p>
     </div>
   </section>
 );
 
-// ---------- (Insights section removed — articles not yet published) ----------
+const FlywheelSvg = () => (
+  <div className="flywheel-svg" aria-hidden="true">
+    <svg viewBox="0 0 320 320">
+      <defs>
+        <linearGradient id="fw-g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#FF8A00"/>
+          <stop offset="100%" stopColor="#FFC107"/>
+        </linearGradient>
+      </defs>
+      <circle cx="160" cy="160" r="120" fill="none" stroke="rgba(255,138,0,0.15)" strokeWidth="1" strokeDasharray="2 6"/>
+      <circle cx="160" cy="160" r="120" fill="none" stroke="url(#fw-g)" strokeWidth="1.4" strokeDasharray="200 580" strokeLinecap="round" className="flywheel-svg__rotate"/>
+      {/* four nodes */}
+      {[
+        { x: 160, y: 40, label1: "DEPLOY", label2: "Senior operator", id: 1 },
+        { x: 280, y: 160, label1: "SEE", label2: "The real problem", id: 2 },
+        { x: 160, y: 280, label1: "ENGINEER", label2: "Into software", id: 3 },
+        { x: 40, y: 160, label1: "RETURN", label2: "To the front line", id: 4 },
+      ].map(n => (
+        <g key={n.id}>
+          <circle cx={n.x} cy={n.y} r="8" fill="#0D1117" stroke="url(#fw-g)" strokeWidth="2"/>
+          <circle cx={n.x} cy={n.y} r="3" fill="url(#fw-g)"/>
+          <text x={n.x} y={n.y - 18} textAnchor="middle" fontSize="10" letterSpacing="1.5" fontFamily="ui-monospace, Menlo, monospace" fill="#FFC107">{n.label1}</text>
+          <text x={n.x} y={n.y + 26} textAnchor="middle" fontSize="11" fill="#CBD5E1">{n.label2}</text>
+        </g>
+      ))}
+      {/* centre */}
+      <text x="160" y="156" textAnchor="middle" fontSize="11" letterSpacing="2" fontFamily="ui-monospace, Menlo, monospace" fill="rgba(255,255,255,0.5)">FORWARD</text>
+      <text x="160" y="172" textAnchor="middle" fontSize="11" letterSpacing="2" fontFamily="ui-monospace, Menlo, monospace" fill="rgba(255,255,255,0.5)">ENGINEERING</text>
+    </svg>
+  </div>
+);
 
 const App = () => (
   <>
     <Nav active="home" />
     <main>
       <HomeHero />
-      <TwoTrack />
-      <StackSection />
-      <ProductsSection />
-      <AIBand />
-      <HowSection />
-      <IndustriesSection />
+      <TwoMotions />
+      <FlagshipBand />
+      <ProofStrip />
+      <EngineSection />
+      <FlywheelSection />
       <FinalCTA />
     </main>
     <Footer />

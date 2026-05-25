@@ -5,7 +5,7 @@ const AtlasHero = () => (
   <section className="prod-hero">
     <div className="ms-hero__wash"></div>
     <div className="ms-container" style={{ position: "relative", zIndex: 2 }}>
-      <Breadcrumb items={[{ label: "Software", href: "software.html" }, { label: "Workforce Atlas" }]} />
+      <Breadcrumb items={[{ label: "Products", href: "products.html" }, { label: "Workforce Atlas" }]} />
       <div className="prod-hero__pills">
         <Pill kind="soon">COMING SOON</Pill>
         <Pill kind="neutral-dark">PRODUCT + SERVICE</Pill>
@@ -112,7 +112,7 @@ const AtlasRequest = () => {
 
 const AtlasApp = () => (
   <>
-    <Nav active="software" />
+    <Nav active="products" />
     <main>
       <AtlasHero />
       <AtlasBoth />
@@ -121,9 +121,9 @@ const AtlasApp = () => (
         <div className="ms-container">
           <div className="eyebrow">HOW WE DELIVER THIS</div>
           <h2>Atlas is Forward-Deployed AI Engineering, productised.</h2>
-          <p>Underneath Atlas sits MangoStack's <a href="operating.html#ai" style={{ color: "var(--orange)" }}>AI embedment</a> model — one senior engineer-operator, embedded into your business, who builds the AI workforce alongside your human team and operates it until your team is ready to take it over.</p>
-          <p>Atlas is what an AI-embedment engagement looks like when we've packaged it for one specific case: an AI workforce audit followed by deployment. Where the work generalises into a product, we ship the product. Where it doesn't — a custom AI tool you need built inside your business, an agentic workflow no one has built before — we run the engagement directly. Same engineer-operator brain, both ways.</p>
-          <div className="callout" style={{ marginTop: 24 }}><strong>Need custom AI shipped, not an audit?</strong> If your business already knows what it needs built, you can engage MangoStack directly through our operating work rather than starting with an Atlas audit. <a href="operating.html#ai" style={{ color: "var(--white)", textDecoration: "underline" }}>See how that works →</a></div>
+          <p>Underneath Atlas sits the engagement model we call <a href="forward-deployed-engineering.html" style={{ color: "var(--orange)" }}>Forward-Deployed AI Engineering</a> — one senior engineer-operator, embedded into your business, who builds the AI workforce alongside your human team and operates it until your team is ready to take it over.</p>
+          <p>Atlas is what an FDE engagement looks like when we've packaged it for one specific case: an AI workforce audit followed by deployment. Where the work generalises into a product, we ship the product. Where it doesn't — a custom AI tool you need built inside your business, an agentic workflow no one has built before — we run the engagement directly. Same engineer-operator brain, both ways.</p>
+          <div className="callout" style={{ marginTop: 24 }}><strong>Need custom AI shipped, not an audit?</strong> If your business already knows what it needs built, you can engage MangoStack directly through Forward-Deployed AI Engineering rather than starting with an Atlas audit. <a href="forward-deployed-engineering.html" style={{ color: "var(--white)", textDecoration: "underline" }}>See how that works →</a></div>
         </div>
       </section>
 

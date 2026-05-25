@@ -16,20 +16,20 @@ const NotFoundApp = () => (
             <a href="contact.html" className="btn-link">Tell us what you were looking for →</a>
           </div>
           <div className="four04-grid">
-            <a href="the-stack.html" className="four04-card">
+            <a href="operating.html" className="four04-card">
               <div className="four04-card__num">01</div>
-              <div className="four04-card__title">The Stack</div>
-              <div className="four04-card__desc">Embedded senior operators — strategy, transformation, operations.</div>
+              <div className="four04-card__title">Operating</div>
+              <div className="four04-card__desc">Senior operators embedded into your team — transformation, operations, AI.</div>
             </a>
-            <a href="products.html" className="four04-card">
+            <a href="software.html" className="four04-card">
               <div className="four04-card__num">02</div>
-              <div className="four04-card__title">Products</div>
-              <div className="four04-card__desc">Software we've shipped or are shipping: Atlas, ILR-Calc, HowCraft.</div>
+              <div className="four04-card__title">Software</div>
+              <div className="four04-card__desc">Forward-engineered software. Flagship: agentic finance — Pelvar and Pipworth.</div>
             </a>
-            <a href="how-we-work.html" className="four04-card">
+            <a href="approach.html" className="four04-card">
               <div className="four04-card__num">03</div>
-              <div className="four04-card__title">How We Work</div>
-              <div className="four04-card__desc">Fast, focused, outcome-shaped. Weekly demos. Built to hand back.</div>
+              <div className="four04-card__title">Approach</div>
+              <div className="four04-card__desc">Forward Engineering — how the operating studio and the software studio are the same studio.</div>
             </a>
           </div>
         </div>

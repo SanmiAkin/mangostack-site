@@ -1,4 +1,5 @@
 // MangoStack — shared components (Nav, Footer, Wordmark, Pills, etc.)
+// v4 — new IA: Home / Operating / Software / Approach / Contact
 const { useState, useEffect, useRef } = React;
 
 const Wordmark = ({ height = 36 }) => (
@@ -17,15 +18,14 @@ const Pill = ({ kind = "neutral", children }) => (
 const StatusDot = ({ kind }) => (
   <span style={{
     width: 7, height: 7, borderRadius: "50%",
-    background: kind === "live" ? "#22C55E" : "#FF8A00",
+    background: kind === "live" ? "#22C55E" : kind === "build" ? "#FF8A00" : "#94A3B8",
     flexShrink: 0,
     boxShadow: kind === "live" ? "0 0 0 2px rgba(34,197,94,0.18)" : "none",
   }} />
 );
 
 const Nav = ({ active = "home" }) => {
-  const [stackOpen, setStackOpen] = useState(false);
-  const [prodOpen, setProdOpen] = useState(false);
+  const [softOpen, setSoftOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   // Body scroll lock + Escape close while drawer is open
@@ -47,50 +47,38 @@ const Nav = ({ active = "home" }) => {
       <header className="ms-nav">
         <a href="index.html" className="ms-nav__brand"><Wordmark height={34} /></a>
         <nav className="ms-nav__links">
+          <a href="operating.html" className={active === "operating" ? "is-active" : ""}>Operating</a>
           <div
             className="ms-nav__dropdown"
-            onMouseEnter={() => setStackOpen(true)}
-            onMouseLeave={() => setStackOpen(false)}
+            onMouseEnter={() => setSoftOpen(true)}
+            onMouseLeave={() => setSoftOpen(false)}
           >
-            <a href="the-stack.html" className={active === "stack" ? "is-active" : ""}>The Stack ▾</a>
-            {stackOpen && (
+            <a href="software.html" className={active === "software" ? "is-active" : ""}>Software ▾</a>
+            {softOpen && (
               <div className="ms-nav__menu">
-                <a href="strategic-advisory.html"><strong>Strategic Advisory</strong><span>Strategy that ships</span></a>
-                <a href="transformation-leadership.html"><strong>Transformation Leadership</strong><span>Run your transformation</span></a>
-                <a href="operations-leadership.html"><strong>Operations Leadership</strong><span>Your operating system</span></a>
-                <a href="forward-deployed-engineering.html"><strong>Forward-Deployed AI Engineering</strong><span>Engineer-operators who build the AI</span></a>
-              </div>
-            )}
-          </div>
-          <div
-            className="ms-nav__dropdown"
-            onMouseEnter={() => setProdOpen(true)}
-            onMouseLeave={() => setProdOpen(false)}
-          >
-            <a href="products.html" className={active === "products" ? "is-active" : ""}>Products ▾</a>
-            {prodOpen && (
-              <div className="ms-nav__menu">
-                <a href="ilr-calc.html">
-                  <strong><StatusDot kind="live" />ILR-Calc</strong>
-                  <span>UK ILR readiness — live</span>
+                <a href="pelvar.html">
+                  <strong><StatusDot kind="build" />Pelvar</strong>
+                  <span>Agentic group close — in build</span>
+                </a>
+                <a href="pipworth.html">
+                  <strong><StatusDot kind="build" />Pipworth</strong>
+                  <span>Agentic cash application — in development</span>
                 </a>
                 <a href="workforce-atlas.html">
                   <strong><StatusDot kind="soon" />Workforce Atlas</strong>
                   <span>AI workforce audit — coming soon</span>
                 </a>
-                <a href="howcraft.html">
-                  <strong><StatusDot kind="soon" />HowCraft</strong>
-                  <span>Decision engine — coming soon</span>
+                <a href="ilr-calc.html">
+                  <strong><StatusDot kind="live" />ILR-Calc</strong>
+                  <span>UK ILR readiness — live</span>
                 </a>
               </div>
             )}
           </div>
-          <a href="ai-transformation.html" className={active === "ai" ? "is-active" : ""}>AI Transformation</a>
-          <a href="how-we-work.html" className={active === "how" ? "is-active" : ""}>How We Work</a>
-          <a href="about.html" className={active === "about" ? "is-active" : ""}>About</a>
+          <a href="approach.html" className={active === "approach" ? "is-active" : ""}>Approach</a>
           <a href="contact.html" className={active === "contact" ? "is-active" : ""}>Contact</a>
         </nav>
-        <a href="contact.html" className="btn-primary btn-sm ms-nav__cta">Book a discovery call</a>
+        <a href="contact.html" className="btn-primary btn-sm ms-nav__cta">Start a conversation</a>
         <button
           className={`ms-nav__burger ${mobileOpen ? "is-open" : ""}`}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -103,7 +91,7 @@ const Nav = ({ active = "home" }) => {
       </header>
     </div>
 
-      {/* Mobile drawer — sibling of .ms-nav-wrap (NOT child) so backdrop-filter on the wrap doesn't trap it in a 77px containing block */}
+      {/* Mobile drawer */}
       <div
         className={`ms-mobile-scrim ${mobileOpen ? "is-open" : ""}`}
         onClick={() => setMobileOpen(false)}
@@ -121,28 +109,20 @@ const Nav = ({ active = "home" }) => {
           </button>
         </div>
         <nav className="ms-mobile-nav__links">
+          <a href="operating.html" className="ms-mobile-nav__top">Operating</a>
           <div className="ms-mobile-nav__group">
-            <a href="the-stack.html" className="ms-mobile-nav__group-head">The Stack</a>
-            <a href="strategic-advisory.html">Strategic Advisory</a>
-            <a href="transformation-leadership.html">Transformation Leadership</a>
-            <a href="operations-leadership.html">Operations Leadership</a>
-            <a href="forward-deployed-engineering.html">Forward-Deployed AI Engineering</a>
-          </div>
-          <div className="ms-mobile-nav__group">
-            <a href="products.html" className="ms-mobile-nav__group-head">Products</a>
-            <a href="ilr-calc.html"><StatusDot kind="live" />ILR-Calc</a>
+            <a href="software.html" className="ms-mobile-nav__group-head">Software</a>
+            <a href="pelvar.html"><StatusDot kind="build" />Pelvar</a>
+            <a href="pipworth.html"><StatusDot kind="build" />Pipworth</a>
             <a href="workforce-atlas.html"><StatusDot kind="soon" />Workforce Atlas</a>
-            <a href="howcraft.html"><StatusDot kind="soon" />HowCraft</a>
+            <a href="ilr-calc.html"><StatusDot kind="live" />ILR-Calc</a>
           </div>
-          <a href="ai-transformation.html" className="ms-mobile-nav__top">AI Transformation</a>
-          <a href="how-we-work.html" className="ms-mobile-nav__top">How We Work</a>
-          <a href="about.html" className="ms-mobile-nav__top">About</a>
+          <a href="approach.html" className="ms-mobile-nav__top">Approach</a>
           <a href="contact.html" className="ms-mobile-nav__top">Contact</a>
         </nav>
         <div className="ms-mobile-nav__foot">
-          <a href="contact.html" className="btn-primary btn-full">Book a discovery call</a>
-          <a href="https://calendly.com/sanmi-mangostack/30min" target="_blank" rel="noopener" className="ms-mobile-nav__email">Or book directly via Calendly →</a>
-          <a href="mailto:info@mangostack.co.uk" className="ms-mobile-nav__email">info@mangostack.co.uk</a>
+          <a href="contact.html" className="btn-primary btn-full">Start a conversation</a>
+          <a href="mailto:hello@mangostack.co.uk" className="ms-mobile-nav__email">hello@mangostack.co.uk</a>
         </div>
       </aside>
     </>
@@ -158,35 +138,35 @@ const Footer = () => (
         <p className="ms-footer__addr">Registered in England & Wales · Company No. 17196444<br/>Office — London, UK</p>
       </div>
       <div>
-        <div className="ms-footer__h">The Stack</div>
+        <div className="ms-footer__h">Operating</div>
         <ul>
-          <li><a href="strategic-advisory.html">Strategic Advisory</a></li>
-          <li><a href="transformation-leadership.html">Transformation Leadership</a></li>
-          <li><a href="operations-leadership.html">Operations Leadership</a></li>
-          <li><a href="forward-deployed-engineering.html">Forward-Deployed AI Engineering</a></li>
+          <li><a href="operating.html">Transformation programmes</a></li>
+          <li><a href="operating.html#operations">Operations leadership</a></li>
+          <li><a href="operating.html#ai">AI embedment</a></li>
+          <li><a href="operating.html#how">How we deploy</a></li>
         </ul>
       </div>
       <div>
-        <div className="ms-footer__h">Products</div>
+        <div className="ms-footer__h">Software</div>
         <ul>
-          <li><a href="ilr-calc.html"><StatusDot kind="live" />ILR-Calc</a></li>
+          <li><a href="pelvar.html"><StatusDot kind="build" />Pelvar</a></li>
+          <li><a href="pipworth.html"><StatusDot kind="build" />Pipworth</a></li>
           <li><a href="workforce-atlas.html"><StatusDot kind="soon" />Workforce Atlas</a></li>
-          <li><a href="howcraft.html"><StatusDot kind="soon" />HowCraft</a></li>
+          <li><a href="ilr-calc.html"><StatusDot kind="live" />ILR-Calc</a></li>
         </ul>
       </div>
       <div>
-        <div className="ms-footer__h">Company</div>
+        <div className="ms-footer__h">Studio</div>
         <ul>
-          <li><a href="ai-transformation.html">AI Transformation</a></li>
-          <li><a href="how-we-work.html">How We Work</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="approach.html">Approach</a></li>
+          <li><a href="approach.html#forward-engineering">Forward Engineering</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
         <div className="ms-footer__h">Connect</div>
         <ul>
-          <li><a href="mailto:info@mangostack.co.uk">info@mangostack.co.uk</a></li>
+          <li><a href="mailto:hello@mangostack.co.uk">hello@mangostack.co.uk</a></li>
           <li><a href="https://calendly.com/sanmi-mangostack/30min" target="_blank" rel="noopener">Book a 30-min call</a></li>
         </ul>
       </div>
@@ -200,9 +180,7 @@ const Footer = () => (
 
 // ============================================================
 // Form submission helper.
-// Uses Web3Forms — submissions forward to info@mangostack.co.uk.
-// To swap providers later, change MS_FORM_ENDPOINT + adjust the
-// access_key injection below.
+// Uses Web3Forms — submissions forward to hello@mangostack.co.uk.
 // ============================================================
 const MS_FORM_ENDPOINT = "https://api.web3forms.com/submit";
 const MS_FORM_ACCESS_KEY = "4626c02e-d57a-476e-a0e1-8630dd9050aa";
@@ -210,11 +188,9 @@ const MS_FORM_ACCESS_KEY = "4626c02e-d57a-476e-a0e1-8630dd9050aa";
 const submitForm = async (formEl, { subject = "MangoStack enquiry" } = {}) => {
   const data = new FormData(formEl);
   if (MS_FORM_ENDPOINT && MS_FORM_ACCESS_KEY) {
-    // Web3Forms required + recommended fields
     data.append("access_key", MS_FORM_ACCESS_KEY);
     data.append("subject", subject);
     data.append("from_name", "MangoStack website");
-    // Honeypot — Web3Forms drops submissions where this is non-empty
     if (!data.has("botcheck")) data.append("botcheck", "");
     try {
       const res = await fetch(MS_FORM_ENDPOINT, {
@@ -238,11 +214,11 @@ const mailtoFallback = (data, subject) => {
   }
   const body = encodeURIComponent(lines.join("\n\n"));
   const subj = encodeURIComponent(subject);
-  window.location.href = `mailto:info@mangostack.co.uk?subject=${subj}&body=${body}`;
+  window.location.href = `mailto:hello@mangostack.co.uk?subject=${subj}&body=${body}`;
   return true;
 };
 
-const FinalCTA = ({ heading = "Let's talk", line = "Tell us what you're working on.", cta = "Start the conversation →", href = "contact.html" }) => (
+const FinalCTA = ({ heading = "Tell us what you're working on.", line = "One human reads every message and replies within one business day.", cta = "Start a conversation →", href = "contact.html" }) => (
   <section className="ms-section ms-finalcta">
     <div className="ms-container ms-finalcta__inner">
       <h2 className="h1">{heading}</h2>
@@ -279,4 +255,81 @@ const Breadcrumb = ({ items }) => (
   </div>
 );
 
-Object.assign(window, { Wordmark, Pill, StatusDot, Nav, Footer, FinalCTA, useReveal, Breadcrumb, submitForm });
+// ============================================================
+// Forward Engineering visual — recurring brand motif.
+// Renders the two-motion flywheel: deploy forward → engineer forward → loop.
+// Used on the home hero and the Approach page.
+// ============================================================
+const ForwardEngine = ({ variant = "hero" }) => {
+  // variant: 'hero' (animated, large) or 'static' (small, decorative)
+  return (
+    <div className={`fwd-engine fwd-engine--${variant}`} aria-hidden="true">
+      <svg viewBox="0 0 520 360" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="fwd-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#FF8A00"/>
+            <stop offset="100%" stopColor="#FFC107"/>
+          </linearGradient>
+          <linearGradient id="fwd-grad-soft" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#FF8A00" stopOpacity="0"/>
+            <stop offset="50%" stopColor="#FF8A00" stopOpacity="0.6"/>
+            <stop offset="100%" stopColor="#FFC107" stopOpacity="0"/>
+          </linearGradient>
+          <linearGradient id="fwd-grad-rev" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0%" stopColor="#FF8A00" stopOpacity="0"/>
+            <stop offset="50%" stopColor="#FFC107" stopOpacity="0.45"/>
+            <stop offset="100%" stopColor="#FF8A00" stopOpacity="0"/>
+          </linearGradient>
+        </defs>
+
+        {/* The "front line" — vertical edge between operation and software */}
+        <line x1="260" y1="40" x2="260" y2="320" stroke="rgba(255,255,255,0.18)" strokeWidth="1" strokeDasharray="2 6"/>
+        <text x="260" y="28" fill="rgba(203,213,225,0.7)" fontSize="9" fontFamily="ui-monospace, Menlo, monospace" letterSpacing="2" textAnchor="middle">THE FRONT LINE</text>
+
+        {/* LEFT — operation (dots clustered + people-line) */}
+        <text x="40" y="62" fill="rgba(255,138,0,0.85)" fontSize="9" fontFamily="ui-monospace, Menlo, monospace" letterSpacing="2">OPERATION</text>
+        <g className="fwd-engine__op" stroke="rgba(203,213,225,0.55)" strokeWidth="1.2" fill="none">
+          {/* nine dots in a 3x3 lattice on the left */}
+          {[80, 120, 160].map((x, xi) =>
+            [120, 170, 220].map((y, yi) => (
+              <circle key={`d-${xi}-${yi}`} cx={x} cy={y} r="3" fill="rgba(255,138,0,0.55)" stroke="none"/>
+            ))
+          )}
+          {/* connective lines between dots */}
+          <path d="M 80 120 L 160 120 M 80 170 L 160 170 M 80 220 L 160 220 M 80 120 L 80 220 M 120 120 L 120 220 M 160 120 L 160 220" stroke="rgba(255,138,0,0.18)" />
+        </g>
+
+        {/* RIGHT — software (stacked blocks being assembled) */}
+        <text x="360" y="62" fill="rgba(255,193,7,0.85)" fontSize="9" fontFamily="ui-monospace, Menlo, monospace" letterSpacing="2">SOFTWARE</text>
+        <g className="fwd-engine__sw">
+          <rect x="350" y="190" width="120" height="34" rx="3" fill="none" stroke="rgba(255,193,7,0.7)" strokeWidth="1.4"/>
+          <rect x="350" y="148" width="120" height="34" rx="3" fill="none" stroke="rgba(255,193,7,0.55)" strokeWidth="1.4"/>
+          <rect x="350" y="106" width="120" height="34" rx="3" fill="none" stroke="rgba(255,193,7,0.4)" strokeWidth="1.4"/>
+          <line x1="370" y1="207" x2="450" y2="207" stroke="rgba(255,193,7,0.7)" strokeWidth="1"/>
+          <line x1="370" y1="165" x2="430" y2="165" stroke="rgba(255,193,7,0.55)" strokeWidth="1"/>
+          <line x1="370" y1="123" x2="420" y2="123" stroke="rgba(255,193,7,0.4)" strokeWidth="1"/>
+        </g>
+
+        {/* TOP — deploy forward arrow (left to right, crossing the front line) */}
+        <g className="fwd-engine__deploy">
+          <text x="170" y="85" fill="rgba(255,255,255,0.7)" fontSize="10" fontFamily="ui-monospace, Menlo, monospace" letterSpacing="1.5">DEPLOY FORWARD</text>
+          <line x1="40" y1="98" x2="500" y2="98" stroke="url(#fwd-grad-soft)" strokeWidth="1.5"/>
+          <polygon points="500,98 492,94 492,102" fill="#FFC107"/>
+        </g>
+
+        {/* BOTTOM — engineer forward arrow (right to left, the flywheel return) */}
+        <g className="fwd-engine__engineer">
+          <text x="160" y="280" fill="rgba(255,255,255,0.7)" fontSize="10" fontFamily="ui-monospace, Menlo, monospace" letterSpacing="1.5">ENGINEER FORWARD</text>
+          <line x1="500" y1="295" x2="40" y2="295" stroke="url(#fwd-grad-rev)" strokeWidth="1.5"/>
+          <polygon points="40,295 48,291 48,299" fill="#FF8A00"/>
+        </g>
+
+        {/* Pulse markers travelling along each track */}
+        <circle className="fwd-engine__pulse fwd-engine__pulse--top" r="3.5" fill="#FFC107"/>
+        <circle className="fwd-engine__pulse fwd-engine__pulse--bottom" r="3.5" fill="#FF8A00"/>
+      </svg>
+    </div>
+  );
+};
+
+Object.assign(window, { Wordmark, Pill, StatusDot, Nav, Footer, FinalCTA, useReveal, Breadcrumb, submitForm, ForwardEngine });

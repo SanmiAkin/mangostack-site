@@ -7,7 +7,7 @@ const ILRHero = () => (
   <section className="prod-hero">
     <div className="ms-hero__wash"></div>
     <div className="ms-container" style={{ position: "relative", zIndex: 2 }}>
-      <Breadcrumb items={[{ label: "Products", href: "products.html" }, { label: "ILR-Calc" }]} />
+      <Breadcrumb items={[{ label: "Software", href: "software.html" }, { label: "ILR-Calc" }]} />
       <div className="prod-hero__pills">
         <Pill kind="live">LIVE</Pill>
         <Pill kind="neutral-dark">ZERO DATA COLLECTED</Pill>
@@ -64,7 +64,7 @@ const ZeroPIIShield = () => (
 
 const ILRApp = () => (
   <>
-    <Nav active="products" />
+    <Nav active="software" />
     <main>
       <ILRHero />
 

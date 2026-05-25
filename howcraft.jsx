@@ -5,7 +5,7 @@ const HowCraftHero = () => (
   <section className="prod-hero">
     <div className="ms-hero__wash"></div>
     <div className="ms-container" style={{ position: "relative", zIndex: 2 }}>
-      <Breadcrumb items={[{ label: "Products", href: "products.html" }, { label: "HowCraft" }]} />
+      <Breadcrumb items={[{ label: "Software", href: "software.html" }, { label: "HowCraft" }]} />
       <div className="prod-hero__pills">
         <Pill kind="soon">COMING SOON</Pill>
       </div>
@@ -82,7 +82,7 @@ const Waitlist = () => {
 
 const HowCraftApp = () => (
   <>
-    <Nav active="products" />
+    <Nav active="software" />
     <main>
       <HowCraftHero />
 

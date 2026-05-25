@@ -1,0 +1,697 @@
+/* ============================================================
+   Product mocks — Pelvar UI & Pipworth UI
+   Scoped under .pelvar-ui / .pipworth-ui so styles never leak
+   into the marketing site. Visual language is the Pelvar product
+   brand: paper/cream surfaces, brass accent, Fraunces display,
+   Hanken Grotesk body, IBM Plex Mono numbers.
+   ============================================================ */
+
+.product-mock {
+  --pm-ink: #15191E;
+  --pm-ink-soft: #1B2027;
+  --pm-paper: #F4F1EA;
+  --pm-surface: #FFFFFF;
+  --pm-surface-2: #FBFAF6;
+  --pm-hair: #E7E2D6;
+  --pm-hair-soft: #EEEAE0;
+  --pm-muted: #727A82;
+  --pm-muted-2: #9AA0A6;
+  --pm-brass: #B0853A;
+  --pm-brass-deep: #8F6A2C;
+  --pm-brass-tint: #F3E9D4;
+  --pm-green: #2F6B4E;
+  --pm-green-tint: #E4EFE7;
+  --pm-clay: #B0533B;
+  --pm-clay-tint: #F6E5DE;
+  --pm-amber: #B07B2C;
+  --pm-amber-tint: #F6ECD6;
+  --pm-shadow: 0 1px 2px rgba(21,25,30,.04), 0 8px 24px rgba(21,25,30,.06);
+  --pm-shadow-lg: 0 30px 80px -20px rgba(21,25,30,.45), 0 12px 32px -8px rgba(21,25,30,.22);
+
+  font-variant-numeric: tabular-nums;
+  color: var(--pm-ink);
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.product-mock * { box-sizing: border-box; }
+.product-mock .num { font-variant-numeric: tabular-nums; }
+.product-mock .mono { font-family: 'IBM Plex Mono', monospace; }
+
+/* ---- window frame ---- */
+.product-mock .pm-window {
+  background: var(--pm-paper);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--pm-shadow-lg);
+  border: 1px solid rgba(21,25,30,.08);
+}
+.product-mock .pm-chrome {
+  height: 42px;
+  background: var(--pm-ink);
+  display: flex; align-items: center; gap: 8px;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.product-mock .pm-dot {
+  width: 11px; height: 11px; border-radius: 50%;
+}
+.product-mock .pm-dot.r { background: #E26D5C; }
+.product-mock .pm-dot.y { background: #D9A441; }
+.product-mock .pm-dot.g { background: #5BA777; }
+.product-mock .pm-chrome .pm-url {
+  margin-left: 14px; color: #8A929B; font-size: 12.5px; letter-spacing: .02em;
+  font-family: 'IBM Plex Mono', monospace;
+  display: flex; align-items: center; gap: 7px;
+}
+.product-mock .pm-chrome .pm-url svg { opacity: .6; }
+
+/* ---- app shell ---- */
+.product-mock .pm-app {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  height: 760px;
+}
+
+/* ---- sidebar ---- */
+.product-mock .pm-side {
+  background: var(--pm-ink); color: #C9CDD2;
+  display: flex; flex-direction: column;
+  padding: 22px 0;
+}
+.product-mock .pm-brand {
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 22px 22px;
+}
+.product-mock .pm-brand .pm-mark {
+  width: 30px; height: 30px; border-radius: 8px; flex: none;
+  background: linear-gradient(150deg, var(--pm-brass) 0%, var(--pm-brass-deep) 100%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(176,133,58,.4);
+}
+.product-mock .pm-brand .pm-mark svg { display: block; }
+.product-mock .pm-brand .pm-word {
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: 22px;
+  color: #fff; letter-spacing: .01em;
+}
+.product-mock .pm-navlabel {
+  font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
+  color: #5C636B; padding: 14px 22px 8px; font-weight: 600;
+}
+.product-mock .pm-nav {
+  display: flex; flex-direction: column; gap: 1px;
+  padding: 0 12px;
+}
+.product-mock .pm-nav a {
+  display: flex; align-items: center; gap: 11px;
+  padding: 9px 12px; border-radius: 8px;
+  color: #AAB0B7; font-size: 14px; font-weight: 500;
+  text-decoration: none; transition: .15s;
+}
+.product-mock .pm-nav a svg { width: 17px; height: 17px; flex: none; opacity: .8; }
+.product-mock .pm-nav a:hover { background: rgba(255,255,255,.05); color: #E7E9EC; }
+.product-mock .pm-nav a.is-active {
+  background: rgba(176,133,58,.14); color: #fff;
+}
+.product-mock .pm-nav a.is-active svg { opacity: 1; color: var(--pm-brass); }
+.product-mock .pm-nav a .pm-badge {
+  margin-left: auto; background: var(--pm-brass); color: #fff;
+  font-size: 10.5px; font-weight: 700; border-radius: 20px; padding: 1px 7px;
+}
+.product-mock .pm-side-foot {
+  margin-top: auto;
+  padding: 16px 14px 0;
+  border-top: 1px solid rgba(255,255,255,.07);
+  margin-left: 12px; margin-right: 12px;
+}
+.product-mock .pm-grp {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px; border-radius: 9px;
+  background: rgba(255,255,255,.04);
+}
+.product-mock .pm-grp .pm-av {
+  width: 30px; height: 30px; border-radius: 7px;
+  background: linear-gradient(135deg, #3A4149, #23282E);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 700; font-size: 13px; flex: none;
+}
+.product-mock .pm-grp .pm-meta { line-height: 1.25; overflow: hidden; }
+.product-mock .pm-grp .pm-meta .n {
+  color: #EDEFF1; font-size: 13px; font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.product-mock .pm-grp .pm-meta .s { color: #6E757D; font-size: 11px; }
+.product-mock .pm-grp svg { margin-left: auto; color: #6E757D; flex: none; }
+
+/* ---- main ---- */
+.product-mock .pm-main {
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--pm-paper);
+}
+.product-mock .pm-topbar {
+  height: 62px; flex: none;
+  display: flex; align-items: center; gap: 18px;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--pm-hair);
+  background: rgba(255,255,255,.5);
+  backdrop-filter: blur(6px);
+}
+.product-mock .pm-crumb { font-size: 13px; color: var(--pm-muted); }
+.product-mock .pm-crumb b { color: var(--pm-ink); font-weight: 600; }
+.product-mock .pm-search {
+  margin-left: 8px;
+  display: flex; align-items: center; gap: 9px;
+  background: var(--pm-surface);
+  border: 1px solid var(--pm-hair);
+  border-radius: 9px; padding: 8px 13px;
+  width: 280px; color: var(--pm-muted-2); font-size: 13px;
+}
+.product-mock .pm-search svg { flex: none; }
+.product-mock .pm-top-actions { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+.product-mock .pm-pill-cur {
+  display: flex; align-items: center; gap: 7px;
+  background: var(--pm-brass-tint); border: 1px solid #E6D6B4;
+  color: var(--pm-brass-deep); font-weight: 600; font-size: 12.5px;
+  border-radius: 8px; padding: 7px 11px;
+}
+.product-mock .pm-icobtn {
+  width: 36px; height: 36px; border-radius: 9px;
+  border: 1px solid var(--pm-hair); background: var(--pm-surface);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--pm-muted); position: relative;
+}
+.product-mock .pm-icobtn .pm-ping {
+  position: absolute; top: 8px; right: 8px;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--pm-clay); border: 1.5px solid var(--pm-surface);
+}
+.product-mock .pm-me {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--pm-brass), var(--pm-brass-deep));
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 13px;
+}
+
+.product-mock .pm-scroll { overflow: hidden; padding: 26px 28px 34px; }
+
+.product-mock .pm-pagehead {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 22px; gap: 16px;
+}
+.product-mock .pm-pagehead h1 {
+  font-family: 'Fraunces', serif; font-weight: 600;
+  font-size: 30px; letter-spacing: -.01em; line-height: 1.05;
+  margin: 0;
+}
+.product-mock .pm-pagehead .pm-sub {
+  color: var(--pm-muted); font-size: 13.5px; margin-top: 6px;
+}
+.product-mock .pm-pagehead .pm-sub .pm-live {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--pm-green); font-weight: 600;
+}
+.product-mock .pm-pagehead .pm-sub .pm-live i {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--pm-green); display: inline-block;
+  animation: pmPulse 2s infinite;
+}
+@keyframes pmPulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+.product-mock .pm-btn {
+  font-family: 'Hanken Grotesk'; font-weight: 600; font-size: 13.5px;
+  border: none; border-radius: 9px; padding: 11px 18px;
+  cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+}
+.product-mock .pm-btn.primary {
+  background: var(--pm-ink); color: #fff;
+  box-shadow: 0 4px 14px rgba(21,25,30,.18);
+}
+.product-mock .pm-btn.ghost {
+  background: var(--pm-surface); color: var(--pm-ink);
+  border: 1px solid var(--pm-hair);
+}
+
+/* close agent panel */
+.product-mock .pm-agent {
+  background: linear-gradient(160deg, var(--pm-ink) 0%, #20262D 100%);
+  border-radius: 16px; padding: 24px 26px;
+  color: #E8EBEE; margin-bottom: 22px;
+  position: relative; overflow: hidden;
+  box-shadow: 0 20px 44px -22px rgba(21,25,30,.6);
+}
+.product-mock .pm-agent::after {
+  content: ""; position: absolute; right: -80px; top: -80px;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(176,133,58,.22), rgba(176,133,58,0) 70%);
+}
+.product-mock .pm-agent .pm-ah {
+  display: flex; align-items: center; gap: 13px;
+  margin-bottom: 20px; position: relative;
+}
+.product-mock .pm-agent .pm-ai {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: rgba(176,133,58,.16); border: 1px solid rgba(176,133,58,.4);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--pm-brass);
+}
+.product-mock .pm-agent .pm-ah .pm-t { font-weight: 600; font-size: 15.5px; color: #fff; }
+.product-mock .pm-agent .pm-ah .pm-d { font-size: 12.5px; color: #9097A0; }
+.product-mock .pm-agent .pm-ah .pm-status {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 9px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 30px; padding: 7px 14px;
+  font-size: 12.5px; font-weight: 600;
+}
+.product-mock .pm-agent .pm-ah .pm-status b { color: var(--pm-brass); }
+.product-mock .pm-steps {
+  display: flex; gap: 0;
+  position: relative; margin-bottom: 6px;
+}
+.product-mock .pm-step {
+  flex: 1; display: flex; flex-direction: column; gap: 10px;
+  position: relative; padding-right: 8px;
+}
+.product-mock .pm-step .pm-bar { height: 4px; border-radius: 4px; background: rgba(255,255,255,.1); }
+.product-mock .pm-step.done .pm-bar { background: var(--pm-brass); }
+.product-mock .pm-step.warn .pm-bar { background: var(--pm-amber); }
+.product-mock .pm-step .pm-lab {
+  font-size: 11.5px; color: #8A919A;
+  display: flex; align-items: center; gap: 6px;
+  line-height: 1.2;
+}
+.product-mock .pm-step.done .pm-lab { color: #C7CCD2; }
+.product-mock .pm-step.warn .pm-lab { color: var(--pm-amber-tint); }
+.product-mock .pm-step .pm-lab svg { flex: none; }
+.product-mock .pm-anom {
+  margin-top: 20px;
+  display: flex; gap: 13px; align-items: flex-start;
+  background: rgba(176,123,44,.13);
+  border: 1px solid rgba(176,123,44,.34);
+  border-radius: 11px; padding: 14px 16px;
+  position: relative;
+}
+.product-mock .pm-anom .pm-ic {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: rgba(176,123,44,.2);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--pm-amber-tint); flex: none;
+}
+.product-mock .pm-anom .pm-body .pm-h { font-weight: 600; font-size: 13.5px; color: #fff; margin-bottom: 3px; }
+.product-mock .pm-anom .pm-body .pm-p { font-size: 12.5px; color: #AEB4BB; line-height: 1.5; }
+.product-mock .pm-anom .pm-body .pm-p b { color: #E8D6AE; font-weight: 600; }
+.product-mock .pm-anom .pm-act { margin-left: auto; display: flex; gap: 8px; flex: none; align-self: center; }
+.product-mock .pm-anom .pm-act .pm-a1 {
+  background: var(--pm-brass); color: #fff; border: none; border-radius: 8px;
+  padding: 8px 14px; font-size: 12.5px; font-weight: 600; font-family: inherit; cursor: pointer;
+}
+.product-mock .pm-anom .pm-act .pm-a2 {
+  background: transparent; color: #C7CCD2;
+  border: 1px solid rgba(255,255,255,.18); border-radius: 8px;
+  padding: 8px 14px; font-size: 12.5px; font-weight: 600; font-family: inherit; cursor: pointer;
+}
+
+/* kpi row */
+.product-mock .pm-kpis {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 14px; margin-bottom: 22px;
+}
+.product-mock .pm-kpi {
+  background: var(--pm-surface);
+  border: 1px solid var(--pm-hair);
+  border-radius: 13px;
+  padding: 18px 18px 16px;
+  box-shadow: var(--pm-shadow);
+}
+.product-mock .pm-kpi .pm-k {
+  font-size: 12px; color: var(--pm-muted); font-weight: 600;
+  letter-spacing: .01em;
+  display: flex; align-items: center; gap: 7px;
+}
+.product-mock .pm-kpi .pm-k .pm-d { width: 8px; height: 8px; border-radius: 2px; background: var(--pm-brass); }
+.product-mock .pm-kpi .pm-v {
+  font-family: 'Fraunces', serif; font-weight: 600;
+  font-size: 29px; letter-spacing: -.01em;
+  margin-top: 12px; line-height: 1;
+}
+.product-mock .pm-kpi .pm-v small { font-size: 16px; color: var(--pm-muted); font-weight: 500; }
+.product-mock .pm-kpi .pm-f {
+  margin-top: 11px; display: flex; align-items: center; gap: 7px; font-size: 12.5px;
+}
+.product-mock .pm-chg {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-weight: 600; border-radius: 6px; padding: 2px 7px; font-size: 11.5px;
+}
+.product-mock .pm-chg.up { color: var(--pm-green); background: var(--pm-green-tint); }
+.product-mock .pm-chg.dn { color: var(--pm-clay); background: var(--pm-clay-tint); }
+.product-mock .pm-kpi .pm-f .pm-vs { color: var(--pm-muted-2); font-size: 11.5px; }
+
+/* two col */
+.product-mock .pm-grid2 {
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 18px; margin-bottom: 22px;
+}
+.product-mock .pm-card {
+  background: var(--pm-surface);
+  border: 1px solid var(--pm-hair);
+  border-radius: 14px;
+  box-shadow: var(--pm-shadow);
+  overflow: hidden;
+}
+.product-mock .pm-card .pm-ch {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 17px 20px;
+  border-bottom: 1px solid var(--pm-hair-soft);
+}
+.product-mock .pm-card .pm-ch .pm-ct { font-weight: 600; font-size: 14.5px; }
+.product-mock .pm-card .pm-ch .pm-cs { font-size: 12px; color: var(--pm-muted); margin-top: 2px; }
+.product-mock .pm-card .pm-ch .pm-tag {
+  font-size: 11.5px; font-weight: 600;
+  border-radius: 20px; padding: 4px 11px;
+}
+.product-mock .pm-tag.ok { color: var(--pm-green); background: var(--pm-green-tint); }
+.product-mock .pm-tag.warnt { color: var(--pm-amber); background: var(--pm-amber-tint); }
+
+/* IC table */
+.product-mock .pm-ictab { width: 100%; border-collapse: collapse; }
+.product-mock .pm-ictab th {
+  text-align: left;
+  font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--pm-muted-2); font-weight: 600;
+  padding: 11px 20px;
+  background: var(--pm-surface-2);
+  border-bottom: 1px solid var(--pm-hair-soft);
+}
+.product-mock .pm-ictab th.r, .product-mock .pm-ictab td.r { text-align: right; }
+.product-mock .pm-ictab td {
+  padding: 13px 20px;
+  border-bottom: 1px solid var(--pm-hair-soft);
+  font-size: 13px;
+}
+.product-mock .pm-ictab tr:last-child td { border-bottom: none; }
+.product-mock .pm-pair { display: flex; align-items: center; gap: 9px; }
+.product-mock .pm-flag {
+  width: 19px; height: 14px; border-radius: 2px; flex: none;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
+  overflow: hidden; display: inline-block;
+}
+.product-mock .pm-ent { font-weight: 600; font-size: 13px; }
+.product-mock .pm-reltype { font-size: 11px; color: var(--pm-muted); margin-top: 1px; }
+.product-mock .pm-amt { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; }
+.product-mock .pm-st { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; }
+.product-mock .pm-st.m { color: var(--pm-green); }
+.product-mock .pm-st.w { color: var(--pm-amber); }
+.product-mock .pm-st i { width: 7px; height: 7px; border-radius: 50%; }
+.product-mock .pm-st.m i { background: var(--pm-green); }
+.product-mock .pm-st.w i { background: var(--pm-amber); }
+.product-mock .pm-gap { font-size: 11px; color: var(--pm-amber); font-family: 'IBM Plex Mono', monospace; }
+
+/* FX / goodwill */
+.product-mock .pm-stat {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--pm-hair-soft);
+  display: flex; align-items: center; gap: 12px;
+}
+.product-mock .pm-stat:last-child { border-bottom: none; }
+.product-mock .pm-stat .pm-l { flex: 1; }
+.product-mock .pm-stat .pm-l .pm-ll { font-size: 13px; font-weight: 600; }
+.product-mock .pm-stat .pm-l .pm-ls { font-size: 11.5px; color: var(--pm-muted); margin-top: 2px; }
+.product-mock .pm-stat .pm-rv {
+  font-family: 'IBM Plex Mono', monospace; font-weight: 600;
+  font-size: 15px; text-align: right;
+}
+.product-mock .pm-stat .pm-rv.neg { color: var(--pm-clay); }
+.product-mock .pm-rate {
+  display: flex; gap: 18px;
+  padding: 14px 20px;
+  background: var(--pm-surface-2);
+  border-bottom: 1px solid var(--pm-hair-soft);
+}
+.product-mock .pm-rate .pm-rr { font-size: 11.5px; color: var(--pm-muted); }
+.product-mock .pm-rate .pm-rr b {
+  font-family: 'IBM Plex Mono', monospace; color: var(--pm-ink);
+  font-size: 13px; display: block; margin-top: 2px; font-weight: 600;
+}
+
+/* P&L snapshot */
+.product-mock .pm-pl { width: 100%; border-collapse: collapse; }
+.product-mock .pm-pl td {
+  padding: 9px 20px; font-size: 13px;
+  border-bottom: 1px solid var(--pm-hair-soft);
+}
+.product-mock .pm-pl td.r {
+  text-align: right;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500; font-size: 12.5px;
+}
+.product-mock .pm-pl tr.sum td { font-weight: 700; background: var(--pm-surface-2); }
+.product-mock .pm-pl tr.sum td.r { color: var(--pm-ink); }
+.product-mock .pm-pl tr.tot td {
+  font-weight: 700;
+  border-top: 2px solid var(--pm-ink);
+  border-bottom: none;
+  font-size: 14px;
+}
+.product-mock .pm-pl tr.tot td.r { font-size: 14px; }
+.product-mock .pm-pl .neg { color: var(--pm-clay); }
+.product-mock .pm-pl .ind { padding-left: 34px; color: var(--pm-muted); }
+
+.product-mock .pm-foot {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11.5px; color: var(--pm-muted-2);
+  justify-content: center;
+  padding-top: 6px;
+}
+
+/* responsive — collapse sidebar at narrow widths */
+@media (max-width: 900px) {
+  .product-mock .pm-app { grid-template-columns: 1fr; height: auto; }
+  .product-mock .pm-side { display: none; }
+  .product-mock .pm-grid2 { grid-template-columns: 1fr; }
+  .product-mock .pm-kpis { grid-template-columns: repeat(2, 1fr); }
+  .product-mock .pm-search { display: none; }
+}
+@media (max-width: 540px) {
+  .product-mock .pm-kpis { grid-template-columns: 1fr; }
+  .product-mock .pm-scroll { padding: 18px; }
+  .product-mock .pm-pagehead h1 { font-size: 22px; }
+  .product-mock .pm-steps { flex-wrap: wrap; }
+  .product-mock .pm-step { flex: 1 0 30%; }
+}
+
+/* ============================================================
+   PIPWORTH UI — explain-this-decision hero visual.
+   Same brand palette/typography as Pelvar; sibling product.
+   ============================================================ */
+.product-mock--pipworth .pm-app {
+  grid-template-columns: 240px 1fr;
+  height: auto;
+  min-height: 760px;
+}
+
+/* Pipworth-specific blocks */
+.product-mock .pw-payment {
+  display: grid; grid-template-columns: auto 1fr auto;
+  gap: 18px; align-items: center;
+  padding: 22px 24px;
+  background: linear-gradient(160deg, var(--pm-ink) 0%, #20262D 100%);
+  color: #E8EBEE;
+  border-radius: 16px;
+  margin-bottom: 22px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 44px -22px rgba(21,25,30,.6);
+}
+.product-mock .pw-payment::after {
+  content: ""; position: absolute; right: -80px; top: -80px;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(176,133,58,.22), rgba(176,133,58,0) 70%);
+}
+.product-mock .pw-payment > * { position: relative; z-index: 1; }
+.product-mock .pw-payment__ic {
+  width: 42px; height: 42px; border-radius: 10px;
+  background: rgba(176,133,58,.16); border: 1px solid rgba(176,133,58,.4);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--pm-brass);
+}
+.product-mock .pw-payment__meta { line-height: 1.3; }
+.product-mock .pw-payment__lbl {
+  font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
+  color: #8A929B; font-weight: 600; margin-bottom: 4px;
+}
+.product-mock .pw-payment__amt {
+  font-family: 'Fraunces', serif; font-weight: 600;
+  font-size: 26px; letter-spacing: -.01em; color: #fff;
+}
+.product-mock .pw-payment__from {
+  font-size: 12.5px; color: #AEB4BB; margin-top: 4px;
+}
+.product-mock .pw-payment__from b { color: #fff; font-weight: 600; }
+.product-mock .pw-payment__conf {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px; padding: 12px 16px;
+}
+.product-mock .pw-conf__ring {
+  width: 56px; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif; font-weight: 600;
+  font-size: 18px; color: var(--pm-brass);
+  position: relative;
+}
+.product-mock .pw-conf__ring svg { position: absolute; inset: 0; }
+.product-mock .pw-conf__lbl {
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: #C7CCD2; font-weight: 600;
+}
+.product-mock .pw-conf__mode {
+  font-size: 13px; font-weight: 600; color: #fff; margin-top: 2px;
+}
+.product-mock .pw-conf__mode b { color: var(--pm-brass); }
+
+/* Reasoning grid */
+.product-mock .pw-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 18px; margin-bottom: 22px;
+}
+.product-mock .pw-reason {
+  background: var(--pm-surface);
+  border: 1px solid var(--pm-hair);
+  border-radius: 14px;
+  box-shadow: var(--pm-shadow);
+  overflow: hidden;
+}
+.product-mock .pw-reason__h {
+  padding: 17px 20px;
+  border-bottom: 1px solid var(--pm-hair-soft);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.product-mock .pw-reason__t { font-weight: 600; font-size: 14.5px; }
+.product-mock .pw-reason__d { font-size: 12px; color: var(--pm-muted); margin-top: 2px; }
+.product-mock .pw-invoice {
+  display: grid; grid-template-columns: auto 1fr auto auto;
+  gap: 16px; align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--pm-hair-soft);
+  position: relative;
+}
+.product-mock .pw-invoice:last-child { border-bottom: none; }
+.product-mock .pw-invoice.matched {
+  background: linear-gradient(90deg, rgba(47,107,78,.05) 0%, transparent 60%);
+}
+.product-mock .pw-invoice.matched::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px; background: var(--pm-green);
+}
+.product-mock .pw-invoice__check {
+  width: 22px; height: 22px; border-radius: 6px; flex: none;
+  background: var(--pm-surface-2);
+  border: 1px solid var(--pm-hair);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--pm-muted-2);
+}
+.product-mock .pw-invoice.matched .pw-invoice__check {
+  background: var(--pm-green);
+  border-color: var(--pm-green);
+  color: #fff;
+}
+.product-mock .pw-invoice__ref {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px; font-weight: 600;
+}
+.product-mock .pw-invoice__cust { font-size: 12px; color: var(--pm-muted); margin-top: 2px; }
+.product-mock .pw-invoice__date {
+  font-size: 12px; color: var(--pm-muted);
+  font-family: 'IBM Plex Mono', monospace;
+}
+.product-mock .pw-invoice__amt {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13.5px; font-weight: 600;
+}
+.product-mock .pw-rsum {
+  padding: 16px 20px;
+  background: var(--pm-surface-2);
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--pm-hair-soft);
+}
+.product-mock .pw-rsum__l { font-size: 12.5px; color: var(--pm-muted); font-weight: 600; }
+.product-mock .pw-rsum__v {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px; font-weight: 700;
+}
+
+/* Evidence card */
+.product-mock .pw-evidence {
+  background: var(--pm-surface);
+  border: 1px solid var(--pm-hair);
+  border-radius: 14px;
+  box-shadow: var(--pm-shadow);
+  overflow: hidden;
+}
+.product-mock .pw-ev__h {
+  padding: 17px 20px;
+  border-bottom: 1px solid var(--pm-hair-soft);
+  font-weight: 600; font-size: 14.5px;
+}
+.product-mock .pw-ev__h .pm-cs { font-size: 12px; color: var(--pm-muted); margin-top: 2px; font-weight: 500; }
+.product-mock .pw-ev__list {
+  padding: 8px 0;
+}
+.product-mock .pw-ev__item {
+  display: grid; grid-template-columns: 18px 1fr;
+  gap: 12px; align-items: flex-start;
+  padding: 11px 20px;
+}
+.product-mock .pw-ev__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--pm-brass);
+  margin-top: 6px;
+}
+.product-mock .pw-ev__dot.dim { background: var(--pm-muted-2); }
+.product-mock .pw-ev__txt { font-size: 12.5px; line-height: 1.55; color: var(--pm-ink); }
+.product-mock .pw-ev__txt b { color: var(--pm-brass-deep); font-weight: 600; }
+.product-mock .pw-ev__txt .strike { color: var(--pm-muted); text-decoration: line-through; }
+.product-mock .pw-ev__foot {
+  padding: 14px 20px;
+  background: var(--pm-surface-2);
+  border-top: 1px solid var(--pm-hair-soft);
+  font-size: 11.5px; color: var(--pm-muted);
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: .05em;
+}
+.product-mock .pw-ev__foot b { color: var(--pm-ink); }
+
+/* Audit trail strip */
+.product-mock .pw-trail {
+  background: var(--pm-surface);
+  border: 1px solid var(--pm-hair);
+  border-radius: 14px;
+  padding: 18px 22px;
+  display: flex; align-items: center; gap: 24px;
+  box-shadow: var(--pm-shadow);
+  flex-wrap: wrap;
+}
+.product-mock .pw-trail__item { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--pm-muted); }
+.product-mock .pw-trail__item svg { color: var(--pm-green); }
+.product-mock .pw-trail__item b { color: var(--pm-ink); font-weight: 600; }
+.product-mock .pw-trail__cta {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--pm-ink); color: #fff;
+  padding: 10px 18px; border-radius: 9px;
+  font-size: 13px; font-weight: 600;
+  border: none; cursor: pointer;
+  font-family: inherit;
+}
+
+@media (max-width: 900px) {
+  .product-mock .pw-grid { grid-template-columns: 1fr; }
+  .product-mock .pw-payment { grid-template-columns: auto 1fr; }
+  .product-mock .pw-payment__conf { grid-column: 1 / -1; }
+  .product-mock .pw-trail { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .product-mock .pw-trail__cta { margin-left: 0; width: 100%; justify-content: center; }
+}
