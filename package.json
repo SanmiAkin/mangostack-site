@@ -1,0 +1,29 @@
+{
+  "name": "mangostack-site",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/prerender.mjs",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanmiAkin/mangostack-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SanmiAkin/mangostack-site/issues"
+  },
+  "homepage": "https://github.com/SanmiAkin/mangostack-site#readme",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^8.0.16"
+  },
+  "private": true,
+  "type": "module"
+}
