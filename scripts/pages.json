@@ -1,0 +1,72 @@
+[
+  {
+    "jsxName": "404",
+    "htmlName": "404",
+    "appName": "NotFoundApp"
+  },
+  {
+    "jsxName": "approach",
+    "htmlName": "approach",
+    "appName": "ApApp"
+  },
+  {
+    "jsxName": "contact",
+    "htmlName": "contact",
+    "appName": "ContactApp"
+  },
+  {
+    "jsxName": "cookies",
+    "htmlName": "cookies",
+    "appName": "CookiesApp"
+  },
+  {
+    "jsxName": "home",
+    "htmlName": "index",
+    "appName": "App"
+  },
+  {
+    "jsxName": "howcraft",
+    "htmlName": "howcraft",
+    "appName": "HowCraftApp"
+  },
+  {
+    "jsxName": "ilr-calc",
+    "htmlName": "ilr-calc",
+    "appName": "ILRApp"
+  },
+  {
+    "jsxName": "operating",
+    "htmlName": "operating",
+    "appName": "OpApp"
+  },
+  {
+    "jsxName": "pelvar",
+    "htmlName": "pelvar",
+    "appName": "PelvarApp"
+  },
+  {
+    "jsxName": "pipworth",
+    "htmlName": "pipworth",
+    "appName": "PipworthApp"
+  },
+  {
+    "jsxName": "privacy",
+    "htmlName": "privacy",
+    "appName": "PrivacyApp"
+  },
+  {
+    "jsxName": "software",
+    "htmlName": "software",
+    "appName": "SwApp"
+  },
+  {
+    "jsxName": "terms",
+    "htmlName": "terms",
+    "appName": "TermsApp"
+  },
+  {
+    "jsxName": "workforce-atlas",
+    "htmlName": "workforce-atlas",
+    "appName": "AtlasApp"
+  }
+]
