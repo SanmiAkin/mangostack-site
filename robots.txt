@@ -1,0 +1,12 @@
+# MangoStack — robots.txt
+# We welcome legitimate search-engine indexing.
+
+User-agent: *
+Allow: /
+
+# Don't index the 404 page or anything in /uploads or /scraps
+Disallow: /404.html
+Disallow: /uploads/
+Disallow: /scraps/
+
+Sitemap: https://mangostack.co.uk/sitemap.xml
